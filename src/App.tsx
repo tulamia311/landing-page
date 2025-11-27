@@ -58,6 +58,14 @@ function App() {
     return classes
   }
 
+  // Topics for inner squares
+  const topics: Record<number, string> = {
+    6: 'Infrastructure',
+    7: 'Projects',
+    10: 'Miscellaneous',
+    11: 'Documentation'
+  }
+
   return (
     <div className="grid-container">
       {Array.from({ length: 16 }).map((_, index) => {
@@ -71,6 +79,7 @@ function App() {
             onMouseEnter={() => isInteractive && setHoveredGroup(squareNum)}
             onMouseLeave={() => isInteractive && setHoveredGroup(null)}
             onClick={() => isInteractive && toggleGroup(squareNum)}
+            data-topic={topics[squareNum]}
           />
         )
       })}
