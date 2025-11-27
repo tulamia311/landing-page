@@ -102,7 +102,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10;
+  z-index: 30;
   border: 8px solid black;
 }
 
@@ -146,14 +146,15 @@ body {
   border-color: var(--quaternary) !important;
 }
 
-/* Fix hover state for inner squares: keep icon visible and stationary */
+/* Fix hover state for inner squares: keep icon visible and scale up slightly */
 .square-6:hover,
 .square-7:hover,
 .square-10:hover,
 .square-11:hover {
   background-color: #ffffff !important;
-  transform: none !important;
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) !important; /* Keep original shadow */
+  transform: scale(1.05) !important;
+  box-shadow: 0 4px 12px -2px rgb(0 0 0 / 0.2) !important; /* Enhanced shadow for lift effect */
+  z-index: 20; /* Ensure it stays on top */
 }
 
 /* Ensure inner squares are positioned for tooltip placement */
