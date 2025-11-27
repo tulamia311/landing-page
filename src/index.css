@@ -79,16 +79,16 @@ body.dark-mode .theme-toggle {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 100px);
-  grid-template-rows: repeat(4, 100px);
-  gap: 10px;
-  padding: 10px;
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(4, 200px);
+  gap: 16px;
+  padding: 16px;
   position: relative;
 }
 
 .grid-item {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   padding: 5px;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.14);
@@ -127,8 +127,8 @@ body.dark-mode .theme-toggle {
 /* Center circle */
 .center-circle {
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   background: hsl(217.2 91.2% 59.8%);
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.15);
@@ -229,63 +229,43 @@ body.dark-mode .theme-toggle {
   to { opacity: 1; }
 }
 
-/* Tablet and smaller screens */
-@media (max-width: 768px) {
+/* Tablet: 720px <= width <= 960px => 150px squares */
+@media (max-width: 960px) and (min-width: 720px) {
   .grid-container {
-    grid-template-columns: repeat(4, 70px);
-    grid-template-rows: repeat(4, 70px);
-    gap: 8px;
+    grid-template-columns: repeat(4, 150px);
+    grid-template-rows: repeat(4, 150px);
+    gap: 12px;
+    padding: 12px;
   }
 
   .grid-item {
-    width: 70px;
-    height: 70px;
+    width: 150px;
+    height: 150px;
   }
 
   .center-circle {
-    width: 70px;
-    height: 70px;
+    width: 150px;
+    height: 150px;
   }
 }
 
-/* Mobile devices (320px and up) */
-@media (max-width: 480px) {
+/* Smartphone: width < 720px => 80px squares */
+@media (max-width: 719px) {
   .grid-container {
-    grid-template-columns: repeat(4, 65px);
-    grid-template-rows: repeat(4, 65px);
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(4, 80px);
     gap: 6px;
     padding: 8px;
   }
 
   .grid-item {
-    width: 65px;
-    height: 65px;
+    width: 80px;
+    height: 80px;
     padding: 4px;
   }
 
   .center-circle {
-    width: 65px;
-    height: 65px;
-  }
-}
-
-/* Very small screens (320px) */
-@media (max-width: 360px) {
-  .grid-container {
-    grid-template-columns: repeat(4, 60px);
-    grid-template-rows: repeat(4, 60px);
-    gap: 5px;
-    padding: 5px;
-  }
-
-  .grid-item {
-    width: 60px;
-    height: 60px;
-    padding: 3px;
-  }
-
-  .center-circle {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
   }
 }
