@@ -32,8 +32,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: hsl(222.2 84% 4.9%);
+  background: #ffe0bf; /* bright, soft tone derived from quinary (#ff8203) */
   font-family: system-ui, -apple-system, sans-serif;
+}
+
+body.dark-mode {
+  background: hsl(222.2 84% 4.9%);
 }
 
 #root {
@@ -42,6 +46,35 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.app-shell {
+  position: relative;
+}
+
+.theme-toggle {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 44px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+}
+
+body.dark-mode .theme-toggle {
+  background: rgba(15, 23, 42, 0.9);
+  color: #f9fafb;
+  border-color: rgba(148, 163, 184, 0.6);
 }
 
 .grid-container {
@@ -57,8 +90,8 @@ body {
   width: 100px;
   height: 100px;
   padding: 5px;
-  background: hsl(210 40% 96.1%);
-  border: 1px solid hsl(214.3 31.8% 91.4%);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.14);
   border-radius: 8px;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   transition: all 0.2s ease;
@@ -72,7 +105,7 @@ body {
 }
 
 .grid-item.blurred {
-  opacity: 0.1;
+  opacity: 0.25;
   filter: blur(2px);
   pointer-events: none;
   transform: scale(0.95);

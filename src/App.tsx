@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import ThemeToggle from './components/ThemeToggle'
 
 function App() {
   const [hoveredGroup, setHoveredGroup] = useState<number | null>(null)
@@ -67,23 +68,26 @@ function App() {
   }
 
   return (
-    <div className="grid-container">
-      {Array.from({ length: 16 }).map((_, index) => {
-        const squareNum = index + 1
-        const isInteractive = [6, 7, 10, 11].includes(squareNum)
+    <div className="app-shell">
+      <ThemeToggle />
+      <div className="grid-container">
+        {Array.from({ length: 16 }).map((_, index) => {
+          const squareNum = index + 1
+          const isInteractive = [6, 7, 10, 11].includes(squareNum)
 
-        return (
-          <div
-            key={index}
-            className={getClassName(index)}
-            onMouseEnter={() => isInteractive && setHoveredGroup(squareNum)}
-            onMouseLeave={() => isInteractive && setHoveredGroup(null)}
-            onClick={() => isInteractive && toggleGroup(squareNum)}
-            data-topic={topics[squareNum]}
-          />
-        )
-      })}
-      <div className="center-circle" />
+          return (
+            <div
+              key={index}
+              className={getClassName(index)}
+              onMouseEnter={() => isInteractive && setHoveredGroup(squareNum)}
+              onMouseLeave={() => isInteractive && setHoveredGroup(null)}
+              onClick={() => isInteractive && toggleGroup(squareNum)}
+              data-topic={topics[squareNum]}
+            />
+          )
+        })}
+        <div className="center-circle" />
+      </div>
     </div>
   )
 }
