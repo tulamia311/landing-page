@@ -52,10 +52,78 @@ body.dark-mode {
   position: relative;
 }
 
-.theme-toggle {
+/* Header row with language switcher and theme toggle */
+.header-row {
   position: fixed;
-  bottom: 16px;
+  top: 16px;
   right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 100;
+}
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .lang-switcher {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(148, 163, 184, 0.6);
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  padding: 2px 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.lang-btn:hover {
+  color: #0f172a;
+}
+
+.lang-btn.active {
+  color: #0f172a;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+body.dark-mode .lang-btn {
+  color: #94a3b8;
+}
+
+body.dark-mode .lang-btn:hover {
+  color: #f1f5f9;
+}
+
+body.dark-mode .lang-btn.active {
+  color: #f1f5f9;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.lang-switcher .divider {
+  color: #cbd5e1;
+  font-size: 0.85rem;
+}
+
+body.dark-mode .lang-switcher .divider {
+  color: #475569;
+}
+
+.theme-toggle {
   width: 44px;
   height: 44px;
   padding: 0;
@@ -68,7 +136,6 @@ body.dark-mode {
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(6px);
-  z-index: 100;
 }
 
 body.dark-mode .theme-toggle {

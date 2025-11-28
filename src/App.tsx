@@ -1,38 +1,34 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import './App.css'
 import ThemeToggle from './components/ThemeToggle'
-import outerSquaresContent from './outerSquaresContent.json'
-import innerSquaresContent from './innerSquaresContent.json'
-import centerCircleContent from './centerCircleContent.json'
 
-interface OuterSquareContent {
-  id: number
-  label: string
-  tooltipTitle: string
-  modalBody: string
+// Static data for center circle (URLs don't need translation)
+const centerCircleData = {
+  stateIds: ['poem-intro', 'tech-stack', 'projects', 'random-page'],
+  projects: [
+    { key: 'food-shop', url: 'https://github.com/tulamia311/food-shop' },
+    { key: 'landing-page', url: 'https://github.com/tulamia311/landing-page' },
+  ],
+  links: [
+    { key: 'github', url: 'https://github.com/tulamia311' },
+    { key: 'tulamia', url: 'https://tulamia.site' },
+  ],
 }
 
-interface InnerSquareContent {
-  id: number
-  topic: string
-}
-
-interface CenterCircleState {
+interface ActiveState {
   id: string
   type: string
-  title: string
-  description?: string
-  projects?: { label: string; url: string }[]
-  links?: { label: string; url: string }[]
 }
 
 function App() {
+  const { t, i18n } = useTranslation()
   const [hoveredGroup, setHoveredGroup] = useState<number | null>(null)
   const [toggledGroups, setToggledGroups] = useState<number[]>([])
-  const [activeLuffyState, setActiveLuffyState] = useState<CenterCircleState | null>(null)
+  const [activeState, setActiveState] = useState<ActiveState | null>(null)
   const [isLuffyModalOpen, setIsLuffyModalOpen] = useState(false)
   const [hoveredOuterSquare, setHoveredOuterSquare] = useState<number | null>(null)
-  const [activeOuterSquare, setActiveOuterSquare] = useState<OuterSquareContent | null>(null)
+  const [activeOuterSquareId, setActiveOuterSquareId] = useState<number | null>(null)
   const [isOuterModalOpen, setIsOuterModalOpen] = useState(false)
 
   // Map inner squares to their outer square targets
@@ -88,38 +84,30 @@ function App() {
     return classes
   }
 
-  const luffyStates = centerCircleContent.states as CenterCircleState[]
-
-  const pickRandomLuffyState = (previous?: CenterCircleState | null): CenterCircleState => {
-    if (luffyStates.length === 0) {
-      throw new Error('No Luffy states configured')
-    }
-
-    const pool =
-      luffyStates.length > 1 && previous
-        ? luffyStates.filter(state => state.id !== previous.id)
-        : luffyStates
-
-    const index = Math.floor(Math.random() * pool.length)
-    return pool[index]
+  // Pick a random state ID (excluding previous if possible)
+  const pickRandomStateId = (previousId?: string | null): ActiveState => {
+    const ids = centerCircleData.stateIds
+    const pool = ids.length > 1 && previousId ? ids.filter(id => id !== previousId) : ids
+    const id = pool[Math.floor(Math.random() * pool.length)]
+    // Determine type based on id
+    let type = 'poem'
+    if (id === 'tech-stack') type = 'tech'
+    else if (id === 'projects') type = 'projects'
+    else if (id === 'random-page') type = 'random'
+    return { id, type }
   }
 
   const handleCenterHover = () => {
-    setActiveLuffyState(prev => pickRandomLuffyState(prev))
+    setActiveState(prev => pickRandomStateId(prev?.id))
   }
 
   const handleCenterClick = () => {
-    setActiveLuffyState(prev => prev ?? pickRandomLuffyState(null))
+    setActiveState(prev => prev ?? pickRandomStateId(null))
     setIsLuffyModalOpen(true)
   }
 
   const closeLuffyModal = () => {
     setIsLuffyModalOpen(false)
-  }
-
-  // Helper to get outer square content by id
-  const getOuterSquareContent = (squareNum: number): OuterSquareContent | undefined => {
-    return (outerSquaresContent.squares as OuterSquareContent[]).find(s => s.id === squareNum)
   }
 
   // Check if an outer square is currently visible (not blurred)
@@ -143,11 +131,8 @@ function App() {
   // Outer square click handler
   const handleOuterSquareClick = (squareNum: number) => {
     if (isOuterSquareVisible(squareNum)) {
-      const content = getOuterSquareContent(squareNum)
-      if (content) {
-        setActiveOuterSquare(content)
-        setIsOuterModalOpen(true)
-      }
+      setActiveOuterSquareId(squareNum)
+      setIsOuterModalOpen(true)
     }
   }
 
@@ -155,20 +140,31 @@ function App() {
     setIsOuterModalOpen(false)
   }
 
-  // Helper to get inner square content by id
-  const getInnerSquareContent = (squareNum: number): InnerSquareContent | undefined => {
-    return (innerSquaresContent.squares as InnerSquareContent[]).find(s => s.id === squareNum)
-  }
-
   return (
     <div className="app-shell">
-      <ThemeToggle />
+      <div className="header-row">
+        <div className="lang-switcher">
+          <button
+            className={`lang-btn ${i18n.resolvedLanguage === 'en' ? 'active' : ''}`}
+            onClick={() => i18n.changeLanguage('en')}
+          >
+            EN
+          </button>
+          <span className="divider">|</span>
+          <button
+            className={`lang-btn ${i18n.resolvedLanguage === 'de' ? 'active' : ''}`}
+            onClick={() => i18n.changeLanguage('de')}
+          >
+            DE
+          </button>
+        </div>
+        <ThemeToggle />
+      </div>
       <div className="grid-container">
         {Array.from({ length: 16 }).map((_, index) => {
           const squareNum = index + 1
           const isInnerSquare = [6, 7, 10, 11].includes(squareNum)
           const isOuter = outerSquares.includes(squareNum)
-          const outerContent = isOuter ? getOuterSquareContent(squareNum) : null
           const isVisible = isOuter && isOuterSquareVisible(squareNum)
 
           return (
@@ -187,13 +183,13 @@ function App() {
                 if (isInnerSquare) toggleGroup(squareNum)
                 if (isOuter) handleOuterSquareClick(squareNum)
               }}
-              data-topic={getInnerSquareContent(squareNum)?.topic}
+              data-topic={t(`innerSquares.${squareNum}.topic`, { defaultValue: '' })}
             >
-              {isOuter && outerContent && (
-                <span className="outer-square-label">{outerContent.label}</span>
+              {isOuter && (
+                <span className="outer-square-label">{t(`outerSquares.${squareNum}.label`)}</span>
               )}
-              {isOuter && isVisible && hoveredOuterSquare === squareNum && outerContent && (
-                <div className="outer-square-tooltip">{outerContent.tooltipTitle}</div>
+              {isOuter && isVisible && hoveredOuterSquare === squareNum && (
+                <div className="outer-square-tooltip">{t(`outerSquares.${squareNum}.tooltipTitle`)}</div>
               )}
             </div>
           )
@@ -201,16 +197,16 @@ function App() {
         <div
           className="center-circle"
           onMouseEnter={handleCenterHover}
-          onMouseLeave={() => setActiveLuffyState(null)}
+          onMouseLeave={() => setActiveState(null)}
           onClick={handleCenterClick}
         />
-        {activeLuffyState && (
+        {activeState && (
           <div className="luffy-tooltip">
-            {activeLuffyState.title}
+            {t(`centerCircle.states.${activeState.id}.title`)}
           </div>
         )}
       </div>
-      {isLuffyModalOpen && activeLuffyState && (
+      {isLuffyModalOpen && activeState && (
         <div className="luffy-modal-backdrop" onClick={closeLuffyModal}>
           <div
             className="luffy-modal"
@@ -226,34 +222,34 @@ function App() {
             >
               ×
             </button>
-            <h2 className="luffy-modal-title">{activeLuffyState.title}</h2>
-            {activeLuffyState.description && (
+            <h2 className="luffy-modal-title">{t(`centerCircle.states.${activeState.id}.title`)}</h2>
+            {(activeState.type === 'poem' || activeState.type === 'tech') && (
               <div className="luffy-modal-body">
-                {activeLuffyState.description.split('\n').map((line, index) => (
+                {t(`centerCircle.states.${activeState.id}.description`, { defaultValue: '' }).split('\n').map((line: string, index: number) => (
                   <p key={index}>{line}</p>
                 ))}
               </div>
             )}
-            {activeLuffyState.projects && activeLuffyState.projects.length > 0 && (
+            {activeState.type === 'projects' && (
               <div className="luffy-modal-body">
                 <ul>
-                  {activeLuffyState.projects.map(project => (
+                  {centerCircleData.projects.map(project => (
                     <li key={project.url}>
                       <a href={project.url} target="_blank" rel="noreferrer">
-                        {project.label}
+                        {t(`centerCircle.projects.${project.key}`)}
                       </a>
                     </li>
                   ))}
                 </ul>
               </div>
             )}
-            {activeLuffyState.links && activeLuffyState.links.length > 0 && (
+            {activeState.type === 'random' && (
               <div className="luffy-modal-body">
                 <ul>
-                  {activeLuffyState.links.map(link => (
+                  {centerCircleData.links.map(link => (
                     <li key={link.url}>
                       <a href={link.url} target="_blank" rel="noreferrer">
-                        {link.label}
+                        {t(`centerCircle.links.${link.key}`)}
                       </a>
                     </li>
                   ))}
@@ -263,7 +259,7 @@ function App() {
           </div>
         </div>
       )}
-      {isOuterModalOpen && activeOuterSquare && (
+      {isOuterModalOpen && activeOuterSquareId && (
         <div className="luffy-modal-backdrop" onClick={closeOuterModal}>
           <div
             className="luffy-modal"
@@ -279,9 +275,9 @@ function App() {
             >
               ×
             </button>
-            <h2 className="luffy-modal-title">{activeOuterSquare.tooltipTitle}</h2>
+            <h2 className="luffy-modal-title">{t(`outerSquares.${activeOuterSquareId}.tooltipTitle`)}</h2>
             <div className="luffy-modal-body">
-              <p>{activeOuterSquare.modalBody}</p>
+              <p>{t(`outerSquares.${activeOuterSquareId}.modalBody`)}</p>
             </div>
           </div>
         </div>

@@ -1,76 +1,96 @@
 {
-  "squares": [
-    {
-      "id": 1,
+  "innerSquares": {
+    "6": { "topic": "Infrastructure" },
+    "7": { "topic": "Projects" },
+    "10": { "topic": "Miscellaneous" },
+    "11": { "topic": "Documentation" }
+  },
+  "outerSquares": {
+    "1": {
       "label": "Square 1",
       "tooltipTitle": "Tooltip title 1",
       "modalBody": "Modal body 1: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
     },
-    {
-      "id": 2,
+    "2": {
       "label": "Square 2",
       "tooltipTitle": "Tooltip title 2",
       "modalBody": "Modal body 2: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
     },
-    {
-      "id": 3,
+    "3": {
       "label": "Square 3",
       "tooltipTitle": "Tooltip title 3",
       "modalBody": "Modal body 3: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
     },
-    {
-      "id": 4,
+    "4": {
       "label": "Square 4",
       "tooltipTitle": "Tooltip title 4",
       "modalBody": "Modal body 4: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
     },
-    {
-      "id": 5,
+    "5": {
       "label": "Square 5",
       "tooltipTitle": "Tooltip title 5",
       "modalBody": "Modal body 5: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
     },
-    {
-      "id": 8,
+    "8": {
       "label": "Square 8",
       "tooltipTitle": "Tooltip title 8",
       "modalBody": "Modal body 8: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
     },
-    {
-      "id": 9,
+    "9": {
       "label": "Square 9",
       "tooltipTitle": "Tooltip title 9",
       "modalBody": "Modal body 9: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
     },
-    {
-      "id": 12,
+    "12": {
       "label": "Square 12",
       "tooltipTitle": "Tooltip title 12",
       "modalBody": "Modal body 12: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
     },
-    {
-      "id": 13,
+    "13": {
       "label": "Square 13",
       "tooltipTitle": "Tooltip title 13",
       "modalBody": "Modal body 13: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
     },
-    {
-      "id": 14,
+    "14": {
       "label": "Square 14",
       "tooltipTitle": "Tooltip title 14",
       "modalBody": "Modal body 14: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
     },
-    {
-      "id": 15,
+    "15": {
       "label": "Square 15",
       "tooltipTitle": "Tooltip title 15",
       "modalBody": "Modal body 15: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
     },
-    {
-      "id": 16,
+    "16": {
       "label": "Square 16",
       "tooltipTitle": "Tooltip title 16",
       "modalBody": "Modal body 16: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
     }
-  ]
+  },
+  "centerCircle": {
+    "states": {
+      "poem-intro": {
+        "title": "I am Tulamia D. Luffy.",
+        "description": "Heya! I'm Luffy! Nice to meet ya—let's be friends right now! 😄 This website? It's like my ship: full of adventures, surprises, and dreams—hop on and explore with me, 'cause I'm the guy who'll be the Pirate King, and this place is where we start our journey together! 🌊"
+      },
+      "tech-stack": {
+        "title": "Yohoho! I'm Luffy, captain of this crazy pirate crew AND this website!",
+        "description": "Yohoho! I'm Luffy, captain of this crazy pirate crew AND this website! 😆\nHere's how my team sails the tech seas—'cause building this place is just like heading to the Grand Line!\n\n🛳 🟧 TYPO3 – Thousand Sunny\nThat's our ship! Strong, flexible, always ready for adventure. Built to sail any storm!\n🐶 React – Chopper\nFast, bouncy, transforming all the time to heal bugs and keep things cute and dynamic!\n🧠 Gemini 1.0 – Usopp\nAlways imagining things… sometimes drifts into hallucinations—but hey, creativity is important! 🎨\n💪 Apache – Franky\nSuper sturdy engine room! Powers everything underneath—NEE-SUPER! 🔧\n🍖 PHP – Sanji\nCooking up backend logic with precision, serving delicious code straight to your browser!\n🗺 Documentation – Zoro\nTries to help you find the way… but sometimes still gets lost in folders 🤣. Still, essential for navigation!\n⛏ Composer – Robin\nQuietly builds dependencies and connects everything from the shadows—scholarly and super efficient.\n🎇 Grunt – Brook\nVery old but still alive somehow! Goes \"Yohohoho!\" every time it runs a task. 🎻💀\n🔥 Vite – Ace (spirit of fire)\nFast, blazing hot development! Lights up your workflow in seconds!\n⚙ Webpack – Jinbe\nReliable, strong, and manages heavy stuff in production—stable like the sea itself!\n🔀 Git – Law (honorary crew)\nCuts through versions like ROOM! Keeps everything under control during rough deployments.\n🐟 MySQL – Fishman Island\nDeep database power below sea-level, storing all the treasure securely!\n🫧 Docker – Bubble Coating\nKeeps our ship safe while we dive into any environment—just wrap it and go underwater! 🌊\n📡 Server & Networking – Nami\nPredicts traffic storms, optimizes routes, keeps everything running smooth and profitable 💰⚡\n⌚ CI/CD – Jinbe + Franky tag team\nStrong and steady automated releases that keep us cruising forward!\n\nSo yeah! This website's built by MY CREW—the strongest in both seas AND dev world!\nJoin us, let's create, break limits, and sail toward the future—\n'CAUSE I'M MONKEY D. LUFFY, THE MAN WHO'LL BE THE PIRATE KING… AND THIS IS THE TECH SHIP THAT'LL TAKE US THERE! 🏴‍☠️🔥💻🌊\nLet's set sail! 🚀"
+      },
+      "projects": {
+        "title": "Treasure Map of Projects"
+      },
+      "random-page": {
+        "title": "Where shall we sail next? 🎲"
+      }
+    },
+    "projects": {
+      "food-shop": "Food Shop Demo",
+      "landing-page": "Landing Page Demo"
+    },
+    "links": {
+      "github": "Open a random GitHub repo",
+      "tulamia": "Visit main Tulamia site"
+    }
+  }
 }
