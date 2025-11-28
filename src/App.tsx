@@ -108,6 +108,8 @@ function App() {
 
   const closeLuffyModal = () => {
     setIsLuffyModalOpen(false)
+    // Clear the active state so the tooltip does not linger after closing
+    setActiveState(null)
   }
 
   // Check if an outer square is currently visible (not blurred)
@@ -160,7 +162,15 @@ function App() {
         </div>
         <ThemeToggle />
       </div>
-      <div className="grid-container">
+      <div
+        className="grid-container"
+        onMouseLeave={() => {
+          // When leaving the grid entirely and no modal is open, clear the tooltip state
+          if (!isLuffyModalOpen) {
+            setActiveState(null)
+          }
+        }}
+      >
         {Array.from({ length: 16 }).map((_, index) => {
           const squareNum = index + 1
           const isInnerSquare = [6, 7, 10, 11].includes(squareNum)
@@ -197,7 +207,6 @@ function App() {
         <div
           className="center-circle"
           onMouseEnter={handleCenterHover}
-          onMouseLeave={() => setActiveState(null)}
           onClick={handleCenterClick}
         />
         {activeState && (
