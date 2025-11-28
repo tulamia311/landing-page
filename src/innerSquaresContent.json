@@ -1,0 +1,20 @@
+{
+  "squares": [
+    {
+      "id": 6,
+      "topic": "Infrastructure"
+    },
+    {
+      "id": 7,
+      "topic": "Projects"
+    },
+    {
+      "id": 10,
+      "topic": "Miscellaneous"
+    },
+    {
+      "id": 11,
+      "topic": "Documentation"
+    }
+  ]
+}

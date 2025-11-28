@@ -1,0 +1,76 @@
+{
+  "squares": [
+    {
+      "id": 1,
+      "label": "Feld 1",
+      "tooltipTitle": "Tooltip-Titel 1",
+      "modalBody": "Modal-Inhalt 1: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    {
+      "id": 2,
+      "label": "Feld 2",
+      "tooltipTitle": "Tooltip-Titel 2",
+      "modalBody": "Modal-Inhalt 2: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    {
+      "id": 3,
+      "label": "Feld 3",
+      "tooltipTitle": "Tooltip-Titel 3",
+      "modalBody": "Modal-Inhalt 3: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    {
+      "id": 4,
+      "label": "Feld 4",
+      "tooltipTitle": "Tooltip-Titel 4",
+      "modalBody": "Modal-Inhalt 4: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    {
+      "id": 5,
+      "label": "Feld 5",
+      "tooltipTitle": "Tooltip-Titel 5",
+      "modalBody": "Modal-Inhalt 5: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    {
+      "id": 8,
+      "label": "Feld 8",
+      "tooltipTitle": "Tooltip-Titel 8",
+      "modalBody": "Modal-Inhalt 8: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    {
+      "id": 9,
+      "label": "Feld 9",
+      "tooltipTitle": "Tooltip-Titel 9",
+      "modalBody": "Modal-Inhalt 9: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    {
+      "id": 12,
+      "label": "Feld 12",
+      "tooltipTitle": "Tooltip-Titel 12",
+      "modalBody": "Modal-Inhalt 12: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    {
+      "id": 13,
+      "label": "Feld 13",
+      "tooltipTitle": "Tooltip-Titel 13",
+      "modalBody": "Modal-Inhalt 13: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    {
+      "id": 14,
+      "label": "Feld 14",
+      "tooltipTitle": "Tooltip-Titel 14",
+      "modalBody": "Modal-Inhalt 14: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    {
+      "id": 15,
+      "label": "Feld 15",
+      "tooltipTitle": "Tooltip-Titel 15",
+      "modalBody": "Modal-Inhalt 15: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    {
+      "id": 16,
+      "label": "Feld 16",
+      "tooltipTitle": "Tooltip-Titel 16",
+      "modalBody": "Modal-Inhalt 16: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    }
+  ]
+}

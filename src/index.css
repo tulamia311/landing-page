@@ -87,6 +87,7 @@ body.dark-mode .theme-toggle {
 }
 
 .grid-item {
+  position: relative;
   width: 200px;
   height: 200px;
   padding: 5px;
@@ -116,6 +117,48 @@ body.dark-mode .theme-toggle {
   filter: blur(0);
   transform: scale(1);
   transition: all 0.3s ease-out;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* Outer square label text */
+.outer-square-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #0f172a;
+  text-align: center;
+  transition: filter 0.2s ease;
+}
+
+body.dark-mode .outer-square-label {
+  color: #0f172a;
+}
+
+/* Blur label when square is blurred */
+.grid-item.blurred .outer-square-label {
+  filter: blur(2px);
+}
+
+/* Outer square tooltip */
+.outer-square-tooltip {
+  position: absolute;
+  bottom: calc(100% - 40px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.45);
+  z-index: 50;
+  pointer-events: none;
 }
 
 .grid-item.active-switch {
@@ -204,6 +247,7 @@ body.dark-mode .theme-toggle {
   font-size: 0.8rem;
   text-align: center;
   box-shadow: 0 4px 10px rgba(15, 23, 42, 0.45);
+  z-index: 40;
 }
 
 .luffy-modal-backdrop {
@@ -222,10 +266,15 @@ body.dark-mode .theme-toggle {
   max-height: 80vh;
   padding: 20px 24px 18px;
   border-radius: 18px;
-  background: #0f172a;
-  color: #e5e7eb;
+  background: #f9fafb;
+  color: #0f172a;
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.75);
   overflow: auto;
+}
+
+body.dark-mode .luffy-modal {
+  background: #0f172a;
+  color: #e5e7eb;
 }
 
 .luffy-modal-title {
@@ -371,6 +420,14 @@ body.dark-mode .theme-toggle {
     width: 150px;
     height: 150px;
   }
+
+  .outer-square-label {
+    font-size: 0.75rem;
+  }
+
+  .outer-square-tooltip {
+    font-size: 0.65rem;
+  }
 }
 
 /* Smartphone: width < 720px => 80px squares */
@@ -391,5 +448,14 @@ body.dark-mode .theme-toggle {
   .center-circle {
     width: 80px;
     height: 80px;
+  }
+
+  .outer-square-label {
+    font-size: 0.6rem;
+  }
+
+  .outer-square-tooltip {
+    font-size: 0.55rem;
+    padding: 4px 6px;
   }
 }

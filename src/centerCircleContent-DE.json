@@ -1,0 +1,34 @@
+{
+  "states": [
+    {
+      "id": "poem-intro",
+      "type": "poem",
+      "title": "Ich bin Tulamia D. Luffy.",
+      "description": "Heya! Ich bin Luffy! Schön dich kennenzulernen—lass uns sofort Freunde werden! 😄 Diese Website? Sie ist wie mein Schiff: voller Abenteuer, Überraschungen und Träume—spring an Bord und erkunde mit mir, denn ich bin der Typ, der der Piratenkönig wird, und hier beginnt unsere gemeinsame Reise! 🌊"
+    },
+    {
+      "id": "tech-stack",
+      "type": "tech",
+      "title": "Yohoho! Ich bin Luffy, Kapitän dieser verrückten Piratencrew UND dieser Website!",
+      "description": "Yohoho! Ich bin Luffy, Kapitän dieser verrückten Piratencrew UND dieser Website! 😆\nSo segelt mein Team durch die Tech-Meere—denn diesen Ort zu bauen ist wie auf die Grand Line zu steuern!\n\n🛳 🟧 TYPO3 – Thousand Sunny\nDas ist unser Schiff! Stark, flexibel, immer bereit für Abenteuer. Gebaut um jeden Sturm zu überstehen!\n🐶 React – Chopper\nSchnell, hüpfend, transformiert sich ständig um Bugs zu heilen und alles niedlich und dynamisch zu halten!\n🧠 Gemini 1.0 – Usopp\nStellt sich immer Dinge vor… driftet manchmal in Halluzinationen ab—aber hey, Kreativität ist wichtig! 🎨\n💪 Apache – Franky\nSuper stabiler Maschinenraum! Treibt alles darunter an—NEE-SUPER! 🔧\n🍖 PHP – Sanji\nKocht Backend-Logik mit Präzision, serviert köstlichen Code direkt in deinen Browser!\n🗺 Dokumentation – Zoro\nVersucht dir den Weg zu zeigen… verirrt sich aber manchmal noch in Ordnern 🤣. Trotzdem essentiell für die Navigation!\n⛏ Composer – Robin\nBaut leise Dependencies und verbindet alles aus dem Schatten—gelehrt und super effizient.\n🎇 Grunt – Brook\nSehr alt aber irgendwie noch am Leben! Macht \"Yohohoho!\" jedes Mal wenn er eine Aufgabe ausführt. 🎻💀\n🔥 Vite – Ace (Geist des Feuers)\nSchnelle, brennend heiße Entwicklung! Erhellt deinen Workflow in Sekunden!\n⚙ Webpack – Jinbe\nZuverlässig, stark, und verwaltet schwere Sachen in Produktion—stabil wie das Meer selbst!\n🔀 Git – Law (Ehrencrew)\nSchneidet durch Versionen wie ROOM! Hält alles unter Kontrolle bei rauen Deployments.\n🐟 MySQL – Fischmenscheninsel\nTiefe Datenbank-Power unter dem Meeresspiegel, speichert alle Schätze sicher!\n🫧 Docker – Blasen-Beschichtung\nHält unser Schiff sicher während wir in jede Umgebung tauchen—einfach einwickeln und abtauchen! 🌊\n📡 Server & Netzwerk – Nami\nSagt Traffic-Stürme voraus, optimiert Routen, hält alles reibungslos und profitabel am Laufen 💰⚡\n⌚ CI/CD – Jinbe + Franky Teamwork\nStarke und stetige automatisierte Releases die uns vorwärts bringen!\n\nAlso ja! Diese Website wurde von MEINER CREW gebaut—die stärkste in beiden Meeren UND der Dev-Welt!\nSchließ dich uns an, lass uns erschaffen, Grenzen sprengen und in die Zukunft segeln—\nDENN ICH BIN MONKEY D. LUFFY, DER MANN DER DER PIRATENKÖNIG WIRD… UND DAS IST DAS TECH-SCHIFF DAS UNS DORTHIN BRINGT! 🏴‍☠️🔥💻🌊\nLasst uns in See stechen! 🚀"
+    },
+    {
+      "id": "projects",
+      "type": "projects",
+      "title": "Schatzkarte der Projekte",
+      "projects": [
+        { "label": "Food Shop Demo", "url": "https://github.com/tulamia311/food-shop" },
+        { "label": "Landing Page Demo", "url": "https://github.com/tulamia311/landing-page" }
+      ]
+    },
+    {
+      "id": "random-page",
+      "type": "random",
+      "title": "Wohin segeln wir als nächstes? 🎲",
+      "links": [
+        { "label": "Öffne ein zufälliges GitHub Repo", "url": "https://github.com/tulamia311" },
+        { "label": "Besuche die Haupt-Tulamia-Seite", "url": "https://tulamia.site" }
+      ]
+    }
+  ]
+}
