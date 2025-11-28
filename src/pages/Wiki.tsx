@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { useNavigate } from 'react-router-dom'
+import mermaid from 'mermaid'
 
 // Import markdown files as raw strings
 import deploymentMd from '../../docs/deployment.md?raw'
@@ -15,6 +16,30 @@ const docs = [
   { id: 'content-customization', title: 'Content Customization', content: contentCustomizationMd },
   { id: 'deployment', title: 'Deployment Guide', content: deploymentMd },
 ]
+
+// Mermaid component
+const MermaidDiagram = ({ chart }: { chart: string }) => {
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (ref.current) {
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: document.body.classList.contains('dark-mode') ? 'dark' : 'default',
+        securityLevel: 'loose',
+      })
+      mermaid.run({
+        nodes: [ref.current],
+      })
+    }
+  }, [chart])
+
+  return (
+    <div className="mermaid" ref={ref}>
+      {chart}
+    </div>
+  )
+}
 
 export default function Wiki() {
   const [activeDocId, setActiveDocId] = useState(docs[0].id)
@@ -48,7 +73,24 @@ export default function Wiki() {
       </aside>
       <main className="wiki-content">
         <div className="markdown-body">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              code(props) {
+                const { children, className, ...rest } = props
+                const match = /language-(\w+)/.exec(className || '')
+                if (match && match[1] === 'mermaid') {
+                  // Unescape literal \n characters from markdown raw string
+                  return <MermaidDiagram chart={String(children).replace(/\n$/, '').replace(/\\n/g, '\n')} />
+                }
+                return (
+                  <code {...rest} className={className}>
+                    {children}
+                  </code>
+                )
+              }
+            }}
+          >
             {activeDoc.content}
           </ReactMarkdown>
         </div>
