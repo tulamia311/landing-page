@@ -1,73 +1,217 @@
 # Deployment Guide: React to GitHub Pages
 
-## 1. Introduction
-**The Problem:** We built a React application locally, but it was only visible on our own computer. We needed a way to publish it to the internet so others can see and use it.
+## Introduction
 
-**Why this matters:** Deployment is the final step in software development. Without it, the application remains a prototype in a development environment. We chose **GitHub Pages** because it is free, integrated with our code repository, and perfect for static sites like this one.
+**The Problem:** We built a React application locally, but it was only visible on our own computer. We needed a way to publish it to the internet.
 
-## 2. Solution Overview
-We implemented an automated deployment pipeline using the `gh-pages` tool.
+**Why GitHub Pages?** It is free, integrated with our code repository, and perfect for static sites.
 
-**Key Decisions:**
-*   **Tooling:** We used the `gh-pages` npm package instead of manual git commands. This reduces human error and simplifies the process to a single command.
-*   **Configuration:** We modified `vite.config.ts` to set the correct `base` path. This is critical because GitHub Pages hosts project sites at `https://user.github.io/repo-name/`, not at the root domain.
+**Prerequisite:** Set the correct `base` path in `vite.config.ts` to match your repository name:
 
-## 3. Workflow & Component Interaction
-The deployment process involves several "players" working together to move code from your local machine to the live internet.
+```ts
+// vite.config.ts
+export default defineConfig({
+  base: '/landing-page/',  // Must match your repo name
+  plugins: [react()],
+})
+```
 
-### The Deployment Flow
+---
+
+## Method 1: GitHub Actions (Recommended)
+
+This is the **recommended approach**. Every push to `master` automatically builds and deploys your app—no manual steps required.
+
+### How It Works
+
+```mermaid
+flowchart LR
+    subgraph Local["💻 Local"]
+        Code["Your Code"]
+    end
+
+    subgraph GitHub["☁️ GitHub"]
+        Push["git push master"]
+        Actions["⚙️ GitHub Actions"]
+        Pages["🌍 GitHub Pages"]
+    end
+
+    Code --> Push
+    Push --> Actions
+    Actions -- "Build & Deploy" --> Pages
+
+    style Local fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    style GitHub fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    style Actions fill:#fff9c4,stroke:#fbc02d,stroke-width:2px
+```
+
+### Setup Steps
+
+**Step 1:** Create the workflow file at `.github/workflows/deploy.yml`:
+
+```yaml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ['master']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: 'npm'
+
+      - run: npm ci
+      - run: npm run build
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+**Step 2:** Configure GitHub Pages source:
+1. Go to **Settings → Pages**
+2. Under **Build and deployment → Source**, select **GitHub Actions**
+
+**Step 3:** Push your changes:
+
+```bash
+git add .github/workflows/deploy.yml
+git commit -m "[CONFIG] Add GitHub Actions workflow for Pages deployment"
+git push origin master
+```
+
+### Usage
+
+After setup, deployment is fully automatic:
+
+```bash
+# Make changes, commit, and push
+git add .
+git commit -m "[FEATURE] Add new feature"
+git push origin master
+# ✅ GitHub Actions builds and deploys automatically
+```
+
+---
+
+## Method 2: Manual Deploy with gh-pages Tool
+
+An alternative approach using the `gh-pages` npm package. Useful when you want manual control over deployments.
+
+### How It Works
+
 ```mermaid
 flowchart LR
     subgraph Local["💻 Your Local Computer"]
         direction TB
-        Source["📂 src/ folder\n(Your Code)"]
+        Source["📂 src/ folder"]
 
-        subgraph Step1["1. Build Phase"]
+        subgraph Build["1. Build"]
             BuildCmd["npm run build"]
-            Vite["⚙️ Vite\n(The Builder)"]
+            Vite["⚙️ Vite"]
         end
 
-        Dist["📦 dist/ folder\n(Ready-to-ship Website)"]
+        Dist["📦 dist/ folder"]
 
-        subgraph Step2["2. Deploy Phase"]
+        subgraph Deploy["2. Deploy"]
             DeployCmd["npm run deploy"]
-            GHPagesPkg["🚚 gh-pages tool\n(The Courier)"]
+            GHPagesPkg["🚚 gh-pages tool"]
         end
     end
 
-    subgraph Remote["☁️ GitHub (The Cloud)"]
-        Repo["Your Repository"]
-        Branch["🌿 gh-pages branch\n(Special Website Branch)"]
-        Website["🌍 Internet\n(Live Site)"]
+    subgraph Remote["☁️ GitHub"]
+        Branch["🌿 gh-pages branch"]
+        Website["🌍 Live Site"]
     end
 
-    %% The Flow
     Source --> BuildCmd
-    BuildCmd -- "Calls" --> Vite
-    Vite -- "Compiles into" --> Dist
-
+    BuildCmd --> Vite
+    Vite --> Dist
     Dist --> DeployCmd
-    DeployCmd -- "Calls" --> GHPagesPkg
+    DeployCmd --> GHPagesPkg
+    GHPagesPkg -- "Uploads dist/" --> Branch
+    Branch --> Website
 
-    GHPagesPkg -- "🚀 UPLOADS ONLY DIST" --> Branch
-    Branch -- "Auto-Publishes" --> Website
-
-    %% Styling
     style Local fill:#e1f5fe,stroke:#01579b,stroke-width:2px
     style Remote fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
     style Dist fill:#fff9c4,stroke:#fbc02d,stroke-width:2px,stroke-dasharray: 5 5
     style GHPagesPkg fill:#ffccbc,stroke:#bf360c,stroke-width:2px
 ```
 
-### How it works:
-1.  **Build**: `npm run build` tells Vite to compile your code into the `dist` folder.
-2.  **Deploy**: `npm run deploy` tells the `gh-pages` tool to take *only* that `dist` folder and upload it to a specific branch on GitHub.
-3.  **Publish**: GitHub detects the update to the `gh-pages` branch and updates the live website.
+### Setup Steps
 
-## 4. Lessons Learned
-*   **The "Invisible" Branch**: The `gh-pages` branch is created and managed remotely. You might not see it in your local `git branch` list, and that is normal. The `gh-pages` tool acts as a courier that delivers directly to the remote server.
-*   **Base Path Importance**: If the site loads but is blank or missing styles, it is usually because the `base` path in `vite.config.ts` was not set to match the repository name.
+**Step 1:** Install the gh-pages package:
 
-## 5. References
-*   [Vite Documentation: Deploying to GitHub Pages](https://vitejs.dev/guide/static-deploy.html#github-pages)
-*   [gh-pages npm package](https://www.npmjs.com/package/gh-pages)
+```bash
+npm install --save-dev gh-pages
+```
+
+**Step 2:** Add deploy script to `package.json`:
+
+```json
+{
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  }
+}
+```
+
+**Step 3:** Configure GitHub Pages source:
+1. Go to **Settings → Pages**
+2. Under **Build and deployment → Source**, select **Deploy from a branch**
+3. Select branch: `gh-pages`, folder: `/ (root)`
+
+### Usage
+
+```bash
+# Build the app
+npm run build
+
+# Deploy to GitHub Pages
+npm run deploy
+```
+
+### Key Points
+
+- **Invisible Branch:** The `gh-pages` branch is created remotely. You may not see it locally—this is normal.
+- **Two-Step Process:** You must run `npm run build` before `npm run deploy`.
+
+---
+
+## Lessons Learned
+
+- **Base Path is Critical:** If the site loads blank or missing styles, check that `base` in `vite.config.ts` matches your repository name.
+- **GitHub Actions is Simpler:** Once set up, you never need to think about deployment again—just push and it deploys.
+- **gh-pages for Control:** Use the manual method when you need to deploy specific builds or test before going live.
+
+---
+
+## References
+
+- [Vite: Deploying to GitHub Pages](https://vitejs.dev/guide/static-deploy.html#github-pages)
+- [GitHub Actions: deploy-pages](https://github.com/actions/deploy-pages)
+- [gh-pages npm package](https://www.npmjs.com/package/gh-pages)
