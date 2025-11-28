@@ -159,7 +159,7 @@ body.dark-mode .theme-toggle {
   height: 200px;
   padding: 5px;
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.14);
+  border: 4px solid rgba(0, 0, 0, 0.14);
   border-radius: 8px;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   transition: all 0.2s ease;
@@ -438,8 +438,11 @@ body.dark-mode .luffy-modal {
   position: relative;
 }
 
-/* Custom Tooltip - Placed inside the square at the bottom by default */
-.grid-item[data-topic]:hover::after {
+/* Custom Tooltip for inner squares only - Placed inside the square at the bottom by default */
+.square-6[data-topic]:hover::after,
+.square-7[data-topic]:hover::after,
+.square-10[data-topic]:hover::after,
+.square-11[data-topic]:hover::after {
   content: attr(data-topic);
   position: absolute;
   bottom: 8px;
@@ -463,6 +466,35 @@ body.dark-mode .luffy-modal {
 .square-7[data-topic]:hover::after {
   bottom: auto;
   top: 8px;
+}
+
+/* Match outer square border color to inner square group when visible + hovered */
+/* Group 6: inner 6 -> outers 1,2,5 use tertiary border on hover */
+.square-1.visible:hover,
+.square-2.visible:hover,
+.square-5.visible:hover {
+  border-color: var(--tertiary);
+}
+
+/* Group 7: inner 7 -> outers 3,4,8 use primary border on hover */
+.square-3.visible:hover,
+.square-4.visible:hover,
+.square-8.visible:hover {
+  border-color: var(--primary);
+}
+
+/* Group 10: inner 10 -> outers 9,13,14 use quinary border on hover */
+.square-9.visible:hover,
+.square-13.visible:hover,
+.square-14.visible:hover {
+  border-color: var(--quinary);
+}
+
+/* Group 11: inner 11 -> outers 12,15,16 use quaternary border on hover */
+.square-12.visible:hover,
+.square-15.visible:hover,
+.square-16.visible:hover {
+  border-color: var(--quaternary);
 }
 
 @keyframes fadeIn {
