@@ -94,7 +94,9 @@ jobs:
 
 **Step 2:** Configure GitHub Pages source:
 1. Go to **Settings → Pages**
-2. Under **Build and deployment → Source**, select **GitHub Actions**
+2. Under **Build and deployment → Source**, you have **two options**:
+   - **Option A (recommended for this workflow):** select **GitHub Actions**. GitHub will use this workflow to build and publish your site.
+   - **Option B (if you still use the manual `gh-pages` method):** select **Deploy from a branch** and choose branch `gh-pages`. In that case, Method 2 below is what actually updates that branch.
 
 **Step 3:** Push your changes:
 
