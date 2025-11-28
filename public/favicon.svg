@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="4" y="4" width="12" height="12" rx="2" fill="#646cff" stroke="none" />
+  <rect x="18" y="4" width="12" height="12" rx="2" fill="#646cff" stroke="none" opacity="0.8" />
+  <rect x="32" y="4" width="12" height="12" rx="2" fill="#646cff" stroke="none" opacity="0.6" />
+  <rect x="46" y="4" width="12" height="12" rx="2" fill="#646cff" stroke="none" opacity="0.4" />
+
+  <rect x="4" y="18" width="12" height="12" rx="2" fill="#646cff" stroke="none" opacity="0.8" />
+  <rect x="18" y="18" width="12" height="12" rx="2" fill="#646cff" stroke="none" opacity="0.6" />
+  <rect x="32" y="18" width="12" height="12" rx="2" fill="#646cff" stroke="none" opacity="0.4" />
+  <rect x="46" y="18" width="12" height="12" rx="2" fill="#646cff" stroke="none" opacity="0.2" />
+
+  <rect x="4" y="32" width="12" height="12" rx="2" fill="#646cff" stroke="none" opacity="0.6" />
+  <rect x="18" y="32" width="12" height="12" rx="2" fill="#646cff" stroke="none" opacity="0.4" />
+  <rect x="32" y="32" width="12" height="12" rx="2" fill="#646cff" stroke="none" opacity="0.2" />
+  <rect x="46" y="32" width="12" height="12" rx="2" fill="#646cff" stroke="none" opacity="0.1" />
+
+  <rect x="4" y="46" width="12" height="12" rx="2" fill="#646cff" stroke="none" opacity="0.4" />
+  <rect x="18" y="46" width="12" height="12" rx="2" fill="#646cff" stroke="none" opacity="0.2" />
+  <rect x="32" y="46" width="12" height="12" rx="2" fill="#646cff" stroke="none" opacity="0.1" />
+  <rect x="46" y="46" width="12" height="12" rx="2" fill="#646cff" stroke="none" opacity="0.05" />
+</svg>
