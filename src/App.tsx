@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import './App.css'
 import ThemeToggle from './components/ThemeToggle'
+import { luffyStates, type LuffyState } from './luffyStates'
 
 function App() {
   const [hoveredGroup, setHoveredGroup] = useState<number | null>(null)
   const [toggledGroups, setToggledGroups] = useState<number[]>([])
+  const [activeLuffyState, setActiveLuffyState] = useState<LuffyState | null>(null)
+  const [isLuffyModalOpen, setIsLuffyModalOpen] = useState(false)
 
   // Map inner squares to their outer square targets
   const hoverTargets: Record<number, number[]> = {
@@ -59,6 +62,33 @@ function App() {
     return classes
   }
 
+  const pickRandomLuffyState = (previous?: LuffyState | null): LuffyState => {
+    if (luffyStates.length === 0) {
+      throw new Error('No Luffy states configured')
+    }
+
+    const pool =
+      luffyStates.length > 1 && previous
+        ? luffyStates.filter(state => state.id !== previous.id)
+        : luffyStates
+
+    const index = Math.floor(Math.random() * pool.length)
+    return pool[index]
+  }
+
+  const handleCenterHover = () => {
+    setActiveLuffyState(prev => pickRandomLuffyState(prev))
+  }
+
+  const handleCenterClick = () => {
+    setActiveLuffyState(prev => prev ?? pickRandomLuffyState(null))
+    setIsLuffyModalOpen(true)
+  }
+
+  const closeLuffyModal = () => {
+    setIsLuffyModalOpen(false)
+  }
+
   // Topics for inner squares
   const topics: Record<number, string> = {
     6: 'Infrastructure',
@@ -86,8 +116,70 @@ function App() {
             />
           )
         })}
-        <div className="center-circle" />
+        <div
+          className="center-circle"
+          onMouseEnter={handleCenterHover}
+          onClick={handleCenterClick}
+        />
+        {activeLuffyState && (
+          <div className="luffy-tooltip">
+            {activeLuffyState.title}
+          </div>
+        )}
       </div>
+      {isLuffyModalOpen && activeLuffyState && (
+        <div className="luffy-modal-backdrop" onClick={closeLuffyModal}>
+          <div
+            className="luffy-modal"
+            onClick={event => {
+              event.stopPropagation()
+            }}
+          >
+            <button
+              type="button"
+              className="luffy-modal-close"
+              onClick={closeLuffyModal}
+              aria-label="Close"
+            >
+              ×
+            </button>
+            <h2 className="luffy-modal-title">{activeLuffyState.title}</h2>
+            {activeLuffyState.description && (
+              <div className="luffy-modal-body">
+                {activeLuffyState.description.split('\n').map((line, index) => (
+                  <p key={index}>{line}</p>
+                ))}
+              </div>
+            )}
+            {activeLuffyState.projects && activeLuffyState.projects.length > 0 && (
+              <div className="luffy-modal-body">
+                <ul>
+                  {activeLuffyState.projects.map(project => (
+                    <li key={project.url}>
+                      <a href={project.url} target="_blank" rel="noreferrer">
+                        {project.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {activeLuffyState.links && activeLuffyState.links.length > 0 && (
+              <div className="luffy-modal-body">
+                <ul>
+                  {activeLuffyState.links.map(link => (
+                    <li key={link.url}>
+                      <a href={link.url} target="_blank" rel="noreferrer">
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   )
 }
