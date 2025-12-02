@@ -5,7 +5,8 @@
  * This makes the app portable and easy to integrate into different platforms.
  */
 
-import { defaultTheme, ThemeConfig } from './theme';
+import { defaultTheme } from './theme';
+import type { ThemeConfig } from './theme';
 
 export interface AppConfig {
   // Mount point element ID (default: 'root')
