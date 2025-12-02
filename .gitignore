@@ -9,6 +9,7 @@ lerna-debug.log*
 
 node_modules
 dist
+dist-typo3
 dist-ssr
 *.local
 
