@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Top-left 2×2: Red (#af1703) -->
+  <rect x="4"  y="4"  width="12" height="12" rx="2" fill="#af1703" />
+  <rect x="18" y="4"  width="12" height="12" rx="2" fill="#af1703" />
+  <rect x="4"  y="18" width="12" height="12" rx="2" fill="#af1703" />
+  <rect x="18" y="18" width="12" height="12" rx="2" fill="#af1703" />
+
+  <!-- Top-right 2×2: Blue (#1351af) -->
+  <rect x="32" y="4"  width="12" height="12" rx="2" fill="#1351af" />
+  <rect x="46" y="4"  width="12" height="12" rx="2" fill="#1351af" />
+  <rect x="32" y="18" width="12" height="12" rx="2" fill="#1351af" />
+  <rect x="46" y="18" width="12" height="12" rx="2" fill="#1351af" />
+
+  <!-- Bottom-left 2×2: Orange (#ff8203) -->
+  <rect x="4"  y="32" width="12" height="12" rx="2" fill="#ff8203" />
+  <rect x="18" y="32" width="12" height="12" rx="2" fill="#ff8203" />
+  <rect x="4"  y="46" width="12" height="12" rx="2" fill="#ff8203" />
+  <rect x="18" y="46" width="12" height="12" rx="2" fill="#ff8203" />
+
+  <!-- Bottom-right 2×2: Green (#118501) -->
+  <rect x="32" y="32" width="12" height="12" rx="2" fill="#118501" />
+  <rect x="46" y="32" width="12" height="12" rx="2" fill="#118501" />
+  <rect x="32" y="46" width="12" height="12" rx="2" fill="#118501" />
+  <rect x="46" y="46" width="12" height="12" rx="2" fill="#118501" />
+</svg>
