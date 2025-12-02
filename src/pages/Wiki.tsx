@@ -25,7 +25,7 @@ const MermaidDiagram = ({ chart }: { chart: string }) => {
     if (ref.current) {
       mermaid.initialize({
         startOnLoad: true,
-        theme: document.body.classList.contains('dark-mode') ? 'dark' : 'default',
+        theme: document.getElementById('root')?.classList.contains('dark-mode') ? 'dark' : 'default',
         securityLevel: 'loose',
       })
       mermaid.run({
@@ -48,15 +48,15 @@ export default function Wiki() {
   const activeDoc = docs.find(d => d.id === activeDocId) || docs[0]
 
   return (
-    <div className="wiki-container">
-      <aside className="wiki-sidebar">
-        <div className="wiki-header">
-          <button onClick={() => navigate('/')} className="back-btn">
+    <div className="lp-wiki-container">
+      <aside className="lp-wiki-sidebar">
+        <div className="lp-wiki-header">
+          <button onClick={() => navigate('/')} className="lp-back-btn">
             ← Back to App
           </button>
           <h2>Wiki / Docs</h2>
         </div>
-        <nav className="wiki-nav">
+        <nav className="lp-wiki-nav">
           <ul>
             {docs.map(doc => (
               <li key={doc.id}>
@@ -71,8 +71,8 @@ export default function Wiki() {
           </ul>
         </nav>
       </aside>
-      <main className="wiki-content">
-        <div className="markdown-body">
+      <main className="lp-wiki-content">
+        <div className="lp-markdown-body">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             components={{

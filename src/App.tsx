@@ -1,7 +1,6 @@
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import LandingPage from './pages/LandingPage'
 import Wiki from './pages/Wiki'
-import './App.css'
 
 function App() {
   return (

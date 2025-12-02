@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import '../App.css'
 import ThemeToggle from '../components/ThemeToggle'
 
 // Static data for center circle (URLs don't need translation)
@@ -56,7 +55,7 @@ function LandingPage() {
 
   const getClassName = (index: number) => {
     const squareNum = index + 1
-    let classes = `grid-item square-${squareNum}`
+    let classes = `lp-grid-item lp-square-${squareNum}`
 
     // If it's an outer square
     if (outerSquares.includes(squareNum)) {
@@ -145,18 +144,18 @@ function LandingPage() {
   }
 
   return (
-    <div className="app-shell">
-      <div className="header-row">
-        <div className="lang-switcher">
+    <div className="lp-app-shell">
+      <div className="lp-header-row">
+        <div className="lp-lang-switcher">
           <button
-            className={`lang-btn ${i18n.resolvedLanguage === 'en' ? 'active' : ''}`}
+            className={`lp-lang-btn ${i18n.resolvedLanguage === 'en' ? 'active' : ''}`}
             onClick={() => i18n.changeLanguage('en')}
           >
             EN
           </button>
-          <span className="divider">|</span>
+          <span className="lp-divider">|</span>
           <button
-            className={`lang-btn ${i18n.resolvedLanguage === 'de' ? 'active' : ''}`}
+            className={`lp-lang-btn ${i18n.resolvedLanguage === 'de' ? 'active' : ''}`}
             onClick={() => i18n.changeLanguage('de')}
           >
             DE
@@ -164,7 +163,7 @@ function LandingPage() {
         </div>
         <ThemeToggle />
         <button
-          className="wiki-btn"
+          className="lp-wiki-btn"
           onClick={() => navigate('/wiki')}
           title="Open Documentation"
           aria-label="Open Documentation"
@@ -173,7 +172,7 @@ function LandingPage() {
         </button>
       </div>
       <div
-        className="grid-container"
+        className="lp-grid-container"
         onMouseLeave={() => {
           // When leaving the grid entirely and no modal is open, clear the tooltip state
           if (!isLuffyModalOpen) {
@@ -206,51 +205,51 @@ function LandingPage() {
               data-topic={t(`innerSquares.${squareNum}.topic`, { defaultValue: '' })}
             >
               {isOuter && (
-                <span className="outer-square-label">{t(`outerSquares.${squareNum}.label`)}</span>
+                <span className="lp-outer-square-label">{t(`outerSquares.${squareNum}.label`)}</span>
               )}
               {isOuter && isVisible && hoveredOuterSquare === squareNum && (
-                <div className="outer-square-tooltip">{t(`outerSquares.${squareNum}.tooltipTitle`)}</div>
+                <div className="lp-outer-square-tooltip">{t(`outerSquares.${squareNum}.tooltipTitle`)}</div>
               )}
             </div>
           )
         })}
         <div
-          className="center-circle"
+          className="lp-center-circle"
           onMouseEnter={handleCenterHover}
           onClick={handleCenterClick}
         />
         {activeState && (
-          <div className="luffy-tooltip">
+          <div className="lp-luffy-tooltip">
             {t(`centerCircle.states.${activeState.id}.title`)}
           </div>
         )}
       </div>
       {isLuffyModalOpen && activeState && (
-        <div className="luffy-modal-backdrop" onClick={closeLuffyModal}>
+        <div className="lp-modal-backdrop" onClick={closeLuffyModal}>
           <div
-            className="luffy-modal"
+            className="lp-modal"
             onClick={event => {
               event.stopPropagation()
             }}
           >
             <button
               type="button"
-              className="luffy-modal-close"
+              className="lp-modal-close"
               onClick={closeLuffyModal}
               aria-label="Close"
             >
               ×
             </button>
-            <h2 className="luffy-modal-title">{t(`centerCircle.states.${activeState.id}.title`)}</h2>
+            <h2 className="lp-modal-title">{t(`centerCircle.states.${activeState.id}.title`)}</h2>
             {(activeState.type === 'poem' || activeState.type === 'tech') && (
-              <div className="luffy-modal-body">
+              <div className="lp-modal-body">
                 {t(`centerCircle.states.${activeState.id}.description`, { defaultValue: '' }).split('\n').map((line: string, index: number) => (
                   <p key={index}>{line}</p>
                 ))}
               </div>
             )}
             {activeState.type === 'projects' && (
-              <div className="luffy-modal-body">
+              <div className="lp-modal-body">
                 <ul>
                   {centerCircleData.projects.map(project => (
                     <li key={project.url}>
@@ -263,7 +262,7 @@ function LandingPage() {
               </div>
             )}
             {activeState.type === 'random' && (
-              <div className="luffy-modal-body">
+              <div className="lp-modal-body">
                 <ul>
                   {centerCircleData.links.map(link => (
                     <li key={link.url}>
@@ -279,23 +278,23 @@ function LandingPage() {
         </div>
       )}
       {isOuterModalOpen && activeOuterSquareId && (
-        <div className="luffy-modal-backdrop" onClick={closeOuterModal}>
+        <div className="lp-modal-backdrop" onClick={closeOuterModal}>
           <div
-            className="luffy-modal"
+            className="lp-modal"
             onClick={event => {
               event.stopPropagation()
             }}
           >
             <button
               type="button"
-              className="luffy-modal-close"
+              className="lp-modal-close"
               onClick={closeOuterModal}
               aria-label="Close"
             >
               ×
             </button>
-            <h2 className="luffy-modal-title">{t(`outerSquares.${activeOuterSquareId}.tooltipTitle`)}</h2>
-            <div className="luffy-modal-body">
+            <h2 className="lp-modal-title">{t(`outerSquares.${activeOuterSquareId}.tooltipTitle`)}</h2>
+            <div className="lp-modal-body">
               <p>{t(`outerSquares.${activeOuterSquareId}.modalBody`)}</p>
             </div>
           </div>
