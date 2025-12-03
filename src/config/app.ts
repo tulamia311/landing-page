@@ -26,6 +26,18 @@ export interface AppConfig {
   api: {
     baseUrl: string;
   };
+
+  // Content configuration (dynamic text)
+  content: {
+    // Base path for locale files (e.g., '/locales' or '/fileadmin/landing_page_app/locales')
+    localesPath: string;
+    // Supported languages
+    supportedLngs: string[];
+    // Fallback language
+    fallbackLng: string;
+    // Cache duration in seconds (0 = no cache)
+    cacheDuration: number;
+  };
 }
 
 // Default app configuration
@@ -42,6 +54,14 @@ export const defaultAppConfig: AppConfig = {
 
   api: {
     baseUrl: '',
+  },
+
+  content: {
+    // Default: relative path for standalone mode
+    localesPath: '/locales',
+    supportedLngs: ['en', 'de'],
+    fallbackLng: 'en',
+    cacheDuration: 300, // 5 minutes
   },
 };
 
@@ -83,6 +103,10 @@ export function createAppConfig(userConfig: Partial<AppConfig> = {}): AppConfig 
     api: {
       ...defaultAppConfig.api,
       ...userConfig.api,
+    },
+    content: {
+      ...defaultAppConfig.content,
+      ...userConfig.content,
     },
   };
 }
