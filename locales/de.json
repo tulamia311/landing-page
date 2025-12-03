@@ -1,0 +1,96 @@
+{
+  "innerSquares": {
+    "6": { "topic": "Infrastruktur" },
+    "7": { "topic": "Projekte" },
+    "10": { "topic": "Verschiedenes" },
+    "11": { "topic": "Dokumentation" }
+  },
+  "outerSquares": {
+    "1": {
+      "label": "Feld 1",
+      "tooltipTitle": "Tooltip-Titel 1",
+      "modalBody": "Modal-Inhalt 1: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    "2": {
+      "label": "Feld 2",
+      "tooltipTitle": "Tooltip-Titel 2",
+      "modalBody": "Modal-Inhalt 2: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    "3": {
+      "label": "Feld 3",
+      "tooltipTitle": "Tooltip-Titel 3",
+      "modalBody": "Modal-Inhalt 3: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    "4": {
+      "label": "Feld 4",
+      "tooltipTitle": "Tooltip-Titel 4",
+      "modalBody": "Modal-Inhalt 4: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    "5": {
+      "label": "Feld 5",
+      "tooltipTitle": "Tooltip-Titel 5",
+      "modalBody": "Modal-Inhalt 5: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    "8": {
+      "label": "Feld 8",
+      "tooltipTitle": "Tooltip-Titel 8",
+      "modalBody": "Modal-Inhalt 8: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    "9": {
+      "label": "Feld 9",
+      "tooltipTitle": "Tooltip-Titel 9",
+      "modalBody": "Modal-Inhalt 9: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    "12": {
+      "label": "Feld 12",
+      "tooltipTitle": "Tooltip-Titel 12",
+      "modalBody": "Modal-Inhalt 12: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    "13": {
+      "label": "Feld 13",
+      "tooltipTitle": "Tooltip-Titel 13",
+      "modalBody": "Modal-Inhalt 13: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    "14": {
+      "label": "Feld 14",
+      "tooltipTitle": "Tooltip-Titel 14",
+      "modalBody": "Modal-Inhalt 14: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    "15": {
+      "label": "Feld 15",
+      "tooltipTitle": "Tooltip-Titel 15",
+      "modalBody": "Modal-Inhalt 15: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    },
+    "16": {
+      "label": "Feld 16",
+      "tooltipTitle": "Tooltip-Titel 16",
+      "modalBody": "Modal-Inhalt 16: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+    }
+  },
+  "centerCircle": {
+    "states": {
+      "poem-intro": {
+        "title": "Ich bin Tulamia D. Luffy.",
+        "description": "Heya! Ich bin Luffy! Schön dich kennenzulernen—lass uns sofort Freunde werden! 😄 Diese Website? Sie ist wie mein Schiff: voller Abenteuer, Überraschungen und Träume—spring an Bord und erkunde mit mir, denn ich bin der Typ, der der Piratenkönig wird, und hier beginnt unsere gemeinsame Reise! 🌊"
+      },
+      "tech-stack": {
+        "title": "Yohoho! Ich bin Luffy, Kapitän dieser verrückten Piratencrew UND dieser Website!",
+        "description": "Yohoho! Ich bin Luffy, Kapitän dieser verrückten Piratencrew UND dieser Website! 😆\nSo segelt mein Team durch die Tech-Meere—denn diesen Ort zu bauen ist wie auf die Grand Line zu steuern!\n\n🛳 🟧 TYPO3 – Thousand Sunny\nDas ist unser Schiff! Stark, flexibel, immer bereit für Abenteuer. Gebaut um jeden Sturm zu überstehen!\n🐶 React – Chopper\nSchnell, hüpfend, transformiert sich ständig um Bugs zu heilen und alles niedlich und dynamisch zu halten!\n🧠 Gemini 1.0 – Usopp\nStellt sich immer Dinge vor… driftet manchmal in Halluzinationen ab—aber hey, Kreativität ist wichtig! 🎨\n💪 Apache – Franky\nSuper stabiler Maschinenraum! Treibt alles darunter an—NEE-SUPER! 🔧\n🍖 PHP – Sanji\nKocht Backend-Logik mit Präzision, serviert köstlichen Code direkt in deinen Browser!\n🗺 Dokumentation – Zoro\nVersucht dir den Weg zu zeigen… verirrt sich aber manchmal noch in Ordnern 🤣. Trotzdem essentiell für die Navigation!\n⛏ Composer – Robin\nBaut leise Dependencies und verbindet alles aus dem Schatten—gelehrt und super effizient.\n🎇 Grunt – Brook\nSehr alt aber irgendwie noch am Leben! Macht \"Yohohoho!\" jedes Mal wenn er eine Aufgabe ausführt. 🎻💀\n🔥 Vite – Ace (Geist des Feuers)\nSchnelle, brennend heiße Entwicklung! Erhellt deinen Workflow in Sekunden!\n⚙ Webpack – Jinbe\nZuverlässig, stark, und verwaltet schwere Sachen in Produktion—stabil wie das Meer selbst!\n🔀 Git – Law (Ehrencrew)\nSchneidet durch Versionen wie ROOM! Hält alles unter Kontrolle bei rauen Deployments.\n🐟 MySQL – Fischmenscheninsel\nTiefe Datenbank-Power unter dem Meeresspiegel, speichert alle Schätze sicher!\n🫧 Docker – Blasen-Beschichtung\nHält unser Schiff sicher während wir in jede Umgebung tauchen—einfach einwickeln und abtauchen! 🌊\n📡 Server & Netzwerk – Nami\nSagt Traffic-Stürme voraus, optimiert Routen, hält alles reibungslos und profitabel am Laufen 💰⚡\n⌚ CI/CD – Jinbe + Franky Teamwork\nStarke und stetige automatisierte Releases die uns vorwärts bringen!\n\nAlso ja! Diese Website wurde von MEINER CREW gebaut—die stärkste in beiden Meeren UND der Dev-Welt!\nSchließ dich uns an, lass uns erschaffen, Grenzen sprengen und in die Zukunft segeln—\nDENN ICH BIN MONKEY D. LUFFY, DER MANN DER DER PIRATENKÖNIG WIRD… UND DAS IST DAS TECH-SCHIFF DAS UNS DORTHIN BRINGT! 🏴‍☠️🔥💻🌊\nLasst uns in See stechen! 🚀"
+      },
+      "projects": {
+        "title": "Schatzkarte der Projekte"
+      },
+      "random-page": {
+        "title": "Wohin segeln wir als nächstes? 🎲"
+      }
+    },
+    "projects": {
+      "food-shop": "Food Shop Demo",
+      "landing-page": "Landing Page Demo"
+    },
+    "links": {
+      "github": "Öffne ein zufälliges GitHub Repo",
+      "tulamia": "Besuche die Haupt-Tulamia-Seite"
+    }
+  }
+}
