@@ -144,35 +144,10 @@ function LandingPage() {
   }
 
   return (
-    <div className="lp-app-shell">
-      <div className="lp-header-row">
-        <div className="lp-lang-switcher">
-          <button
-            className={`lp-lang-btn ${i18n.resolvedLanguage === 'en' ? 'active' : ''}`}
-            onClick={() => i18n.changeLanguage('en')}
-          >
-            EN
-          </button>
-          <span className="lp-divider">|</span>
-          <button
-            className={`lp-lang-btn ${i18n.resolvedLanguage === 'de' ? 'active' : ''}`}
-            onClick={() => i18n.changeLanguage('de')}
-          >
-            DE
-          </button>
-        </div>
-        <ThemeToggle />
-        <button
-          className="lp-wiki-btn"
-          onClick={() => navigate('/wiki')}
-          title="Open Documentation"
-          aria-label="Open Documentation"
-        >
-          📖
-        </button>
-      </div>
-      <div
-        className="lp-grid-container"
+    <>
+      <div className="lp-app-shell">
+        <div
+          className="lp-grid-container"
         onMouseLeave={() => {
           // When leaving the grid entirely and no modal is open, clear the tooltip state
           if (!isLuffyModalOpen) {
@@ -300,7 +275,35 @@ function LandingPage() {
           </div>
         </div>
       )}
-    </div>
+      </div>
+      {/* Header row positioned at bottom-right of #root */}
+      <div className="lp-header-row">
+        <div className="lp-lang-switcher">
+          <button
+            className={`lp-lang-btn ${i18n.resolvedLanguage === 'en' ? 'active' : ''}`}
+            onClick={() => i18n.changeLanguage('en')}
+          >
+            EN
+          </button>
+          <span className="lp-divider">|</span>
+          <button
+            className={`lp-lang-btn ${i18n.resolvedLanguage === 'de' ? 'active' : ''}`}
+            onClick={() => i18n.changeLanguage('de')}
+          >
+            DE
+          </button>
+        </div>
+        <ThemeToggle />
+        <button
+          className="lp-wiki-btn"
+          onClick={() => navigate('/wiki')}
+          title="Open Documentation"
+          aria-label="Open Documentation"
+        >
+          📖
+        </button>
+      </div>
+    </>
   )
 }
 

@@ -71,14 +71,17 @@
    ========================================================================== */
 
 #root {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100%;
+  /* Size dependent on .lp-app-shell with 4x spacing padding */
+  display: inline-flex;
+  position: relative;
+  padding: calc(var(--lp-space-md) * 4);
   background: var(--lp-bg);
   font-family: var(--lp-font-primary);
   color: var(--lp-text);
   line-height: 1.5;
+
+  /* Center #root in its container (body or host element) */
+  margin: auto;
 }
 
 /* ==========================================================================
@@ -95,8 +98,8 @@
 
 .lp-header-row {
   position: absolute;
-  bottom: calc(var(--lp-space-xl) * -1.25);
-  right: 0;
+  bottom: var(--lp-space-md);
+  right: var(--lp-space-md);
   display: flex;
   align-items: center;
   gap: var(--lp-space-md);
