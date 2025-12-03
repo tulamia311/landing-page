@@ -5,16 +5,20 @@ import { useNavigate } from 'react-router-dom'
 import mermaid from 'mermaid'
 
 // Import markdown files as raw strings
-import deploymentMd from '../../docs/deployment.md?raw'
 import uiOverviewMd from '../../docs/ui-overview.md?raw'
 import techOverviewMd from '../../docs/tech-overview.md?raw'
-import contentCustomizationMd from '../../docs/content-customization.md?raw'
+import developerGuideMd from '../../docs/developer-guide.md?raw'
+import portabilityStandardsMd from '../../docs/portability-standards.md?raw'
+import dynamicContentMd from '../../docs/dynamic-content.md?raw'
+import deploymentMd from '../../docs/deployment.md?raw'
 
 const docs = [
   { id: 'ui-overview', title: 'UI Overview', content: uiOverviewMd },
   { id: 'tech-overview', title: 'Technical Overview', content: techOverviewMd },
-  { id: 'content-customization', title: 'Content Customization', content: contentCustomizationMd },
-  { id: 'deployment', title: 'Deployment Guide', content: deploymentMd },
+  { id: 'developer-guide', title: 'Developer Guide', content: developerGuideMd },
+  { id: 'portability', title: 'Portability Standards', content: portabilityStandardsMd },
+  { id: 'dynamic-content', title: 'Dynamic Content', content: dynamicContentMd },
+  { id: 'deployment', title: 'Deployment', content: deploymentMd },
 ]
 
 // Mermaid component
