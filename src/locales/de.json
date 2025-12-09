@@ -7,81 +7,255 @@
   },
   "outerSquares": {
     "1": {
-      "label": "Feld 1",
-      "tooltipTitle": "Tooltip-Titel 1",
-      "modalBody": "Modal-Inhalt 1: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "Tech Stack",
+      "tooltipTitle": "Verwendete Technologien",
+      "layoutType": "list",
+      "modalBody": {
+        "description": "Vollständiger Technologie-Stack der TULAMIA-Website.",
+        "items": [
+          { "icon": "🟠", "title": "TYPO3 v12.4", "description": "Enterprise CMS für Content-Management" },
+          { "icon": "⚛️", "title": "React 18", "description": "Moderne UI-Bibliothek mit TypeScript" },
+          { "icon": "🐘", "title": "PHP 8.1", "description": "Backend-Sprache mit modernen Features" },
+          { "icon": "🐬", "title": "MySQL 5.7", "description": "Relationale Datenbank für Datenspeicherung" },
+          { "icon": "🐳", "title": "Docker", "description": "Containerisierung für konsistente Umgebungen" },
+          { "icon": "🪶", "title": "Apache", "description": "Webserver mit mod_rewrite" },
+          { "icon": "📦", "title": "Composer", "description": "PHP-Abhängigkeitsverwaltung" },
+          { "icon": "🐗", "title": "Grunt", "description": "Task-Runner für Frontend-Builds" },
+          { "icon": "⚡", "title": "Vite", "description": "Schneller React-Entwicklungsserver" },
+          { "icon": "🎨", "title": "SCSS/Bootstrap 5", "description": "Styling und responsives Design" }
+        ]
+      }
     },
     "2": {
-      "label": "Feld 2",
-      "tooltipTitle": "Tooltip-Titel 2",
-      "modalBody": "Modal-Inhalt 2: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "Hosting",
+      "tooltipTitle": "Hosting & Deployment",
+      "layoutType": "card",
+      "modalBody": {
+        "description": "Produktions-Hosting bei Strato mit Plesk-Kontrollpanel.",
+        "sections": [
+          {
+            "title": "🌐 Strato Hosting",
+            "content": "Deutscher Hosting-Anbieter mit Plesk-Kontrollpanel für Domain-Verwaltung, SSL-Zertifikate und PHP-Konfiguration."
+          },
+          {
+            "title": "🔐 Sicherheit",
+            "content": "ZeroSSL-Zertifikate, HTTP Basic Auth für Staging-Umgebungen und korrekte Dateiberechtigungen (Plesk-Domain-Benutzer-Isolation)."
+          },
+          {
+            "title": "🚀 Deployment-Skript",
+            "content": "Ein-Befehl-Deployment via deploy-tulamia-v12-to-strato: Git-Sync, rsync React-Bundles, Datenbank-Sync, Asset-Build, Cache-Flush und Verifizierung."
+          },
+          {
+            "title": "📁 Multi-Umgebung",
+            "content": "Entwicklung (Docker unter tulamia-v12.local), Staging (staging.tulamia.site) und Produktion (tulamia.site) mit korrekter Konfigurations-Isolation."
+          }
+        ]
+      }
     },
     "3": {
-      "label": "Feld 3",
-      "tooltipTitle": "Tooltip-Titel 3",
-      "modalBody": "Modal-Inhalt 3: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "React",
+      "tooltipTitle": "React-Anwendungen",
+      "layoutType": "grid",
+      "modalBody": {
+        "description": "Interaktive React-Anwendungen integriert in TYPO3.",
+        "items": [
+          { "icon": "🧭", "title": "Landing Page", "description": "Interaktives Portfolio-Showcase mit 4x4-Grid-Navigation" },
+          { "icon": "✅", "title": "Todo App", "description": "Aufgabenverwaltung mit Sortierung, Filterung und Status-Tracking" },
+          { "icon": "📋", "title": "Tasks Board", "description": "Kanban-Board mit Drag-and-Drop-Funktionalität" },
+          { "icon": "🎯", "title": "Life Goals", "description": "Ziel-Tracking mit Fortschrittsvisualisierung und Diagrammen" },
+          { "icon": "📊", "title": "Sales App", "description": "Verkaufs-Dashboard mit Chart.js-Datenvisualisierung" },
+          { "icon": "👔", "title": "Job App", "description": "Stellenanzeigen mit TYPO3-Backend-API-Integration" }
+        ]
+      }
     },
     "4": {
-      "label": "Feld 4",
-      "tooltipTitle": "Tooltip-Titel 4",
-      "modalBody": "Modal-Inhalt 4: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "TYPO3",
+      "tooltipTitle": "TYPO3-Extensions",
+      "layoutType": "list",
+      "modalBody": {
+        "description": "Eigene TYPO3-Extensions für das TULAMIA-Projekt entwickelt.",
+        "items": [
+          { "icon": "🏠", "title": "tulamia_site", "description": "Haupt-Site-Extension mit Templates, TypoScript und SCSS" },
+          { "icon": "📦", "title": "typo3_react_importer", "description": "Erstellt React-Apps von GitHub als TYPO3-Extensions" },
+          { "icon": "🎓", "title": "typo3_certification_exam", "description": "TYPO3-Zertifizierungs-Übungsmodul" },
+          { "icon": "🛠️", "title": "typo3_utilitycommand_cli", "description": "Eigene CLI-Befehle für TYPO3-Wartung" }
+        ]
+      }
     },
     "5": {
-      "label": "Feld 5",
-      "tooltipTitle": "Tooltip-Titel 5",
-      "modalBody": "Modal-Inhalt 5: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "Lokales Setup",
+      "tooltipTitle": "Lokale Entwicklung",
+      "layoutType": "card",
+      "modalBody": {
+        "description": "Docker-basierte lokale Entwicklungsumgebung.",
+        "sections": [
+          {
+            "title": "🐳 Docker Compose",
+            "content": "Multi-Service-Setup: PHP-FPM App-Container, Apache-Webserver, MySQL-Datenbank und Mailhog für E-Mail-Tests."
+          },
+          {
+            "title": "🔒 SSL-Zertifikate",
+            "content": "Lokales HTTPS via mkcert für vertrauenswürdige Entwicklungszertifikate."
+          },
+          {
+            "title": "📂 Dateiberechtigungen",
+            "content": "UID 1000-Mapping gewährleistet korrekte Datei-Ownership zwischen Host und Containern."
+          },
+          {
+            "title": "🌐 Lokale Domains",
+            "content": "Zugriff via tulamia-v12.local mit Traefik Reverse Proxy."
+          }
+        ]
+      }
     },
     "8": {
-      "label": "Feld 8",
-      "tooltipTitle": "Tooltip-Titel 8",
-      "modalBody": "Modal-Inhalt 8: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "API",
+      "tooltipTitle": "API-Integrationen",
+      "layoutType": "list",
+      "modalBody": {
+        "description": "RESTful APIs verbinden React-Frontends mit TYPO3-Backend.",
+        "items": [
+          { "icon": "💼", "title": "Job App API", "description": "Stellenanzeigen vom TYPO3 Extbase-Controller via eID-Endpoint abrufen" },
+          { "icon": "🌐", "title": "Locale API", "description": "Dynamisches JSON-Locale-Laden aus fileadmin via eID-Controller" },
+          { "icon": "📊", "title": "Sales API", "description": "Verkaufsdaten-Endpoints für Chart.js-Visualisierung" },
+          { "icon": "🎯", "title": "Life Goals API", "description": "Ziel-Fortschritts-Tracking mit CRUD-Operationen" }
+        ]
+      }
     },
     "9": {
-      "label": "Feld 9",
-      "tooltipTitle": "Tooltip-Titel 9",
-      "modalBody": "Modal-Inhalt 9: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "Styling",
+      "tooltipTitle": "Styling & Design",
+      "layoutType": "list",
+      "modalBody": {
+        "description": "Design-System und Styling-Ansatz.",
+        "items": [
+          { "icon": "🎨", "title": "Farbpalette", "description": "Primär #1351af, Sekundär #1351fa, Tertiär #af1703, Quaternär #118501, Quinär #ff8203" },
+          { "icon": "🔤", "title": "Typografie", "description": "System-Schriften mit Fallbacks: system-ui, -apple-system, sans-serif" },
+          { "icon": "✨", "title": "React-Inspiration", "description": "Styles inspiriert von ReactBits und shadcn/ui Komponenten-Bibliotheken" },
+          { "icon": "📱", "title": "Responsiv", "description": "Mobile-First-Design mit Bootstrap 5 Grid-System" },
+          { "icon": "🌙", "title": "Dark Mode", "description": "CSS Custom Properties für Hell/Dunkel-Theme-Wechsel" }
+        ]
+      }
     },
     "12": {
-      "label": "Feld 12",
-      "tooltipTitle": "Tooltip-Titel 12",
-      "modalBody": "Modal-Inhalt 12: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "Einführung",
+      "tooltipTitle": "Einführung & Ansatz",
+      "layoutType": "doc",
+      "modalBody": {
+        "description": "Projektübersicht und technischer Ansatz.",
+        "summary": "Die TULAMIA-Website ist eine persönliche Technologie-Plattform, entwickelt mit TYPO3 CMS v12 und React-Anwendungen. Sie demonstriert moderne Webentwicklungspraktiken einschließlich Containerisierung, Multi-Umgebungs-Deployment und umfassender Dokumentation.",
+        "highlights": [
+          "Full-Stack-Entwicklung mit PHP, React und TypeScript",
+          "Docker-basierte Entwicklungsumgebung",
+          "4+ eigene TYPO3-Extensions",
+          "6 integrierte React-Anwendungen",
+          "50.000+ Codezeilen"
+        ],
+        "links": [
+          { "label": "00-README.md", "url": "https://gitlab.com/typo3v12-websites/tulamia-v12/-/blob/master/doc/final-paper/00-README.md" },
+          { "label": "01-introduction-and-technical-stack.md", "url": "https://gitlab.com/typo3v12-websites/tulamia-v12/-/blob/master/doc/final-paper/01-introduction-and-technical-stack.md" }
+        ]
+      }
     },
     "13": {
-      "label": "Feld 13",
-      "tooltipTitle": "Tooltip-Titel 13",
-      "modalBody": "Modal-Inhalt 13: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "TYPO3-Struktur",
+      "tooltipTitle": "Projektstruktur",
+      "layoutType": "structure",
+      "modalBody": {
+        "description": "TYPO3-Projekt Datei- und Ordnerstruktur.",
+        "items": [
+          { "icon": "📁", "title": "packages/", "description": "Extensions & React-Apps" },
+          { "icon": "📁", "title": "config/", "description": "TYPO3-Konfig (system, sites)" },
+          { "icon": "📁", "title": "web/", "description": "Document Root, fileadmin" },
+          { "icon": "📁", "title": "var/", "description": "Cache, Logs, Sessions" },
+          { "icon": "📁", "title": "vendor/", "description": "Composer-Abhängigkeiten" },
+          { "icon": "📁", "title": "node_modules/", "description": "NPM-Abhängigkeiten" },
+          { "icon": "📁", "title": "doc/", "description": "Dokumentationsdateien" },
+          { "icon": "📁", "title": ".ddev/", "description": "DDEV-Konfig (Alternative)" },
+          { "icon": "📄", "title": "composer.json", "description": "PHP-Abhängigkeiten" },
+          { "icon": "📄", "title": "package.json", "description": "NPM-Skripte & Deps" },
+          { "icon": "📄", "title": "docker-compose.yml", "description": "Container-Orchestrierung" },
+          { "icon": "📄", "title": "Gruntfile.js", "description": "Frontend-Build-Tasks" },
+          { "icon": "📄", "title": ".env", "description": "Umgebungsvariablen" },
+          { "icon": "📄", "title": ".gitignore", "description": "Git-Ignore-Regeln" },
+          { "icon": "📄", "title": "phpstan.neon", "description": "Statische Analyse-Konfig" },
+          { "icon": "📄", "title": "README.md", "description": "Projektdokumentation" }
+        ]
+      }
     },
     "14": {
-      "label": "Feld 14",
-      "tooltipTitle": "Tooltip-Titel 14",
-      "modalBody": "Modal-Inhalt 14: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "Entwicklungsumgebung",
+      "tooltipTitle": "Entwicklungsumgebung",
+      "layoutType": "list",
+      "modalBody": {
+        "description": "Tools und Umgebung für die Entwicklung.",
+        "items": [
+          { "icon": "🐧", "title": "Ubuntu 24.04 LTS", "description": "Linux-Entwicklungs-Workstation" },
+          { "icon": "💻", "title": "Windsurf IDE", "description": "KI-gestützter Code-Editor (Cascade-Assistent)" },
+          { "icon": "🌐", "title": "Chrome DevTools", "description": "Browser-Debugging und React DevTools" },
+          { "icon": "⌨️", "title": "Bash/Zsh", "description": "Eigene Aliase und Deploy-Skripte in .bashrc" },
+          { "icon": "🔀", "title": "Git + GitLab", "description": "Versionskontrolle mit privatem Paket-Hosting" },
+          { "icon": "🤖", "title": "KI-Assistenten", "description": "GPT 4.1, Claude Sonnet 4.5 für Code-Unterstützung" }
+        ]
+      }
     },
     "15": {
-      "label": "Feld 15",
-      "tooltipTitle": "Tooltip-Titel 15",
-      "modalBody": "Modal-Inhalt 15: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "Implementierung",
+      "tooltipTitle": "Implementierungsdetails",
+      "layoutType": "doc",
+      "modalBody": {
+        "description": "Technischer Implementierungsprozess.",
+        "summary": "Die Implementierung umfasst lokale Entwicklung mit Docker, Website-Erstellung mit TYPO3 und Grunt, React-Anwendungsintegration und Deployment zu Strato-Hosting.",
+        "highlights": [
+          "Docker Compose mit 4 Services (app, apache, mysql, mail)",
+          "Grunt Build-Pipeline für SCSS und JavaScript",
+          "React-Apps gebaut mit Vite und integriert via typo3_react_importer",
+          "RESTful APIs mit TYPO3 Extbase-Controllern",
+          "Ein-Befehl-Deployment-Skript mit Verifizierung"
+        ],
+        "links": [
+          { "label": "02-local-development-setup.md", "url": "https://gitlab.com/typo3v12-websites/tulamia-v12/-/blob/master/doc/final-paper/02-local-development-setup.md" },
+          { "label": "03-website-building-process.md", "url": "https://gitlab.com/typo3v12-websites/tulamia-v12/-/blob/master/doc/final-paper/03-website-building-process.md" },
+          { "label": "04-react-applications.md", "url": "https://gitlab.com/typo3v12-websites/tulamia-v12/-/blob/master/doc/final-paper/04-react-applications.md" },
+          { "label": "05-deployment-process.md", "url": "https://gitlab.com/typo3v12-websites/tulamia-v12/-/blob/master/doc/final-paper/05-deployment-process.md" }
+        ]
+      }
     },
     "16": {
-      "label": "Feld 16",
-      "tooltipTitle": "Tooltip-Titel 16",
-      "modalBody": "Modal-Inhalt 16: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "Ergebnisse",
+      "tooltipTitle": "Ergebnisse & Zukunft",
+      "layoutType": "doc",
+      "modalBody": {
+        "description": "Projektergebnisse und Zukunftspläne.",
+        "summary": "Das Projekt erreichte eine voll funktionsfähige TYPO3-Website mit integrierten React-Anwendungen, umfassender Dokumentation und automatisiertem Deployment. Zukunftspläne umfassen TYPO3 v13/v14-Migration, Elasticsearch-Integration und CI/CD-Pipeline-Implementierung.",
+        "highlights": [
+          "Produktionsreife Website unter tulamia.site",
+          "Multi-Umgebungs-Deployment (Dev/Staging/Prod)",
+          "Zweisprachige Dokumentation (Englisch/Deutsch)",
+          "~25-40% KI-Unterstützung in der Entwicklung",
+          "Kontinuierliche Lernplattform ohne festes Enddatum"
+        ],
+        "links": [
+          { "label": "06-conclusion-and-future.md", "url": "https://gitlab.com/typo3v12-websites/tulamia-v12/-/blob/master/doc/final-paper/06-conclusion-and-future.md" }
+        ]
+      }
     }
   },
   "centerCircle": {
     "states": {
       "poem-intro": {
         "title": "Ich bin Tulamia D. Luffy.",
-        "description": "Heya! Ich bin Luffy! Schön dich kennenzulernen—lass uns sofort Freunde werden! 😄 Diese Website? Sie ist wie mein Schiff: voller Abenteuer, Überraschungen und Träume—spring an Bord und erkunde mit mir, denn ich bin der Typ, der der Piratenkönig wird, und hier beginnt unsere gemeinsame Reise! 🌊"
+        "description": "Hey! Ich bin Luffy! Freut mich, dich kennenzulernen—lass uns sofort Freunde sein! 😄 Diese Website? Sie ist wie mein Schiff: voller Abenteuer, Überraschungen und Träume—komm an Bord und erkunde mit mir, denn ich bin der Typ, der der Piratenkönig wird, und hier beginnt unsere gemeinsame Reise! 🌊"
       },
       "tech-stack": {
         "title": "Yohoho! Ich bin Luffy, Kapitän dieser verrückten Piratencrew UND dieser Website!",
-        "description": "Yohoho! Ich bin Luffy, Kapitän dieser verrückten Piratencrew UND dieser Website! 😆\nSo segelt mein Team durch die Tech-Meere—denn diesen Ort zu bauen ist wie auf die Grand Line zu steuern!\n\n🛳 🟧 TYPO3 – Thousand Sunny\nDas ist unser Schiff! Stark, flexibel, immer bereit für Abenteuer. Gebaut um jeden Sturm zu überstehen!\n🐶 React – Chopper\nSchnell, hüpfend, transformiert sich ständig um Bugs zu heilen und alles niedlich und dynamisch zu halten!\n🧠 Gemini 1.0 – Usopp\nStellt sich immer Dinge vor… driftet manchmal in Halluzinationen ab—aber hey, Kreativität ist wichtig! 🎨\n💪 Apache – Franky\nSuper stabiler Maschinenraum! Treibt alles darunter an—NEE-SUPER! 🔧\n🍖 PHP – Sanji\nKocht Backend-Logik mit Präzision, serviert köstlichen Code direkt in deinen Browser!\n🗺 Dokumentation – Zoro\nVersucht dir den Weg zu zeigen… verirrt sich aber manchmal noch in Ordnern 🤣. Trotzdem essentiell für die Navigation!\n⛏ Composer – Robin\nBaut leise Dependencies und verbindet alles aus dem Schatten—gelehrt und super effizient.\n🎇 Grunt – Brook\nSehr alt aber irgendwie noch am Leben! Macht \"Yohohoho!\" jedes Mal wenn er eine Aufgabe ausführt. 🎻💀\n🔥 Vite – Ace (Geist des Feuers)\nSchnelle, brennend heiße Entwicklung! Erhellt deinen Workflow in Sekunden!\n⚙ Webpack – Jinbe\nZuverlässig, stark, und verwaltet schwere Sachen in Produktion—stabil wie das Meer selbst!\n🔀 Git – Law (Ehrencrew)\nSchneidet durch Versionen wie ROOM! Hält alles unter Kontrolle bei rauen Deployments.\n🐟 MySQL – Fischmenscheninsel\nTiefe Datenbank-Power unter dem Meeresspiegel, speichert alle Schätze sicher!\n🫧 Docker – Blasen-Beschichtung\nHält unser Schiff sicher während wir in jede Umgebung tauchen—einfach einwickeln und abtauchen! 🌊\n📡 Server & Netzwerk – Nami\nSagt Traffic-Stürme voraus, optimiert Routen, hält alles reibungslos und profitabel am Laufen 💰⚡\n⌚ CI/CD – Jinbe + Franky Teamwork\nStarke und stetige automatisierte Releases die uns vorwärts bringen!\n\nAlso ja! Diese Website wurde von MEINER CREW gebaut—die stärkste in beiden Meeren UND der Dev-Welt!\nSchließ dich uns an, lass uns erschaffen, Grenzen sprengen und in die Zukunft segeln—\nDENN ICH BIN MONKEY D. LUFFY, DER MANN DER DER PIRATENKÖNIG WIRD… UND DAS IST DAS TECH-SCHIFF DAS UNS DORTHIN BRINGT! 🏴‍☠️🔥💻🌊\nLasst uns in See stechen! 🚀"
+        "description": "Yohoho! Ich bin Luffy, Kapitän dieser verrückten Piratencrew UND dieser Website! 😆\nSo segelt mein Team durch die Tech-Meere—denn diese Seite zu bauen ist wie auf die Grand Line zu fahren!\n\n🛳 �� TYPO3 – Thousand Sunny\nDas ist unser Schiff! Stark, flexibel, immer bereit für Abenteuer. Gebaut, um jeden Sturm zu überstehen!\n🐶 React – Chopper\nSchnell, hüpfend, transformiert sich ständig, um Bugs zu heilen und alles süß und dynamisch zu halten!\n🧠 Gemini 1.0 – Usopp\nStellt sich immer Dinge vor… driftet manchmal in Halluzinationen ab—aber hey, Kreativität ist wichtig! 🎨\n💪 Apache – Franky\nSuper stabiler Maschinenraum! Treibt alles darunter an—NEE-SUPER! 🔧\n🍖 PHP – Sanji\nKocht Backend-Logik mit Präzision, serviert köstlichen Code direkt in deinen Browser!\n🗺 Dokumentation – Zoro\nVersucht dir den Weg zu zeigen… aber verirrt sich manchmal noch in Ordnern 🤣. Trotzdem essentiell für die Navigation!\n⛏ Composer – Robin\nBaut leise Abhängigkeiten und verbindet alles aus dem Schatten—gelehrt und super effizient.\n🎇 Grunt – Brook\nSehr alt aber irgendwie noch am Leben! Macht \"Yohohoho!\" jedes Mal wenn er einen Task ausführt. 🎻💀\n🔥 Vite – Ace (Geist des Feuers)\nSchnelle, brennend heiße Entwicklung! Erhellt deinen Workflow in Sekunden!\n⚙ Webpack – Jinbe\nZuverlässig, stark, und verwaltet schwere Sachen in Produktion—stabil wie das Meer selbst!\n🔀 Git – Law (Ehrencrew)\nSchneidet durch Versionen wie ROOM! Hält alles unter Kontrolle bei rauen Deployments.\n🐟 MySQL – Fischmenscheninsel\nTiefe Datenbank-Power unter dem Meeresspiegel, speichert alle Schätze sicher!\n🫧 Docker – Blasenbeschichtung\nHält unser Schiff sicher während wir in jede Umgebung tauchen—einfach einwickeln und unter Wasser gehen! 🌊\n📡 Server & Netzwerk – Nami\nSagt Verkehrsstürme voraus, optimiert Routen, hält alles reibungslos und profitabel 💰⚡\n⌚ CI/CD – Jinbe + Franky Teamwork\nStarke und stetige automatisierte Releases die uns vorwärts bringen!\n\nAlso ja! Diese Website wurde von MEINER CREW gebaut—die stärkste in beiden Meeren UND der Dev-Welt!\nSchließ dich uns an, lass uns erschaffen, Grenzen durchbrechen und in die Zukunft segeln—\nDENN ICH BIN MONKEY D. LUFFY, DER MANN DER DER PIRATENKÖNIG WIRD… UND DAS IST DAS TECH-SCHIFF DAS UNS DORTHIN BRINGT! 🏴‍☠️🔥💻🌊\nLass uns in See stechen! 🚀"
       },
       "projects": {
         "title": "Schatzkarte der Projekte"
       },
       "random-page": {
-        "title": "Wohin segeln wir als nächstes? 🎲"
+        "title": "Wohin sollen wir als nächstes segeln? 🎲"
       }
     },
     "projects": {
@@ -89,7 +263,7 @@
       "landing-page": "Landing Page Demo"
     },
     "links": {
-      "github": "Öffne ein zufälliges GitHub Repo",
+      "github": "Öffne ein zufälliges GitHub-Repo",
       "tulamia": "Besuche die Haupt-Tulamia-Seite"
     }
   }

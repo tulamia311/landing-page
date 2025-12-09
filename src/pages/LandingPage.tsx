@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import ThemeToggle from '../components/ThemeToggle'
@@ -21,9 +21,74 @@ interface ActiveState {
   type: string
 }
 
+// Types for modal content
+interface ListItem {
+  icon: string
+  title: string
+  description: string
+}
+
+interface CardSection {
+  title: string
+  content: string
+}
+
+interface DocLink {
+  label: string
+  url: string
+}
+
+interface ModalBodyList {
+  description: string
+  items: ListItem[]
+}
+
+interface ModalBodyCard {
+  description: string
+  sections: CardSection[]
+}
+
+interface ModalBodyDoc {
+  description: string
+  summary: string
+  highlights: string[]
+  links: DocLink[]
+}
+
+interface ModalBodyGrid {
+  description: string
+  items: ListItem[]
+}
+
+// Hook for responsive modal sizing
+const useResponsiveModalSize = () => {
+  const [modalSize, setModalSize] = useState({ width: 900, height: 900 })
+
+  useEffect(() => {
+    const updateSize = () => {
+      const screenWidth = window.innerWidth
+      if (screenWidth > 960) {
+        setModalSize({ width: 900, height: 900 })
+      } else if (screenWidth >= 720) {
+        setModalSize({ width: 700, height: 700 })
+      } else {
+        const size = screenWidth - 20
+        setModalSize({ width: size, height: size })
+      }
+    }
+
+    updateSize()
+    window.addEventListener('resize', updateSize)
+    return () => window.removeEventListener('resize', updateSize)
+  }, [])
+
+  return modalSize
+}
+
 function LandingPage() {
   const { t, i18n } = useTranslation()
   const navigate = useNavigate()
+  const modalSize = useResponsiveModalSize()
   const [hoveredGroup, setHoveredGroup] = useState<number | null>(null)
   const [toggledGroups, setToggledGroups] = useState<number[]>([])
   const [activeState, setActiveState] = useState<ActiveState | null>(null)
@@ -143,6 +208,118 @@ function LandingPage() {
     setIsOuterModalOpen(false)
   }
 
+  // Render modal content based on layoutType
+  const renderModalContent = (squareId: number) => {
+    const layoutType = t(`outerSquares.${squareId}.layoutType`, { returnObjects: false }) as string
+    const modalBody = t(`outerSquares.${squareId}.modalBody`, { returnObjects: true })
+
+    // Handle legacy string modalBody (backward compatibility)
+    if (typeof modalBody === 'string') {
+      return <p>{modalBody}</p>
+    }
+
+    const body = modalBody as ModalBodyList | ModalBodyCard | ModalBodyDoc | ModalBodyGrid
+
+    switch (layoutType) {
+      case 'grid':
+        return (
+          <div className="lp-modal-content-grid">
+            <p className="lp-modal-description">{(body as ModalBodyGrid).description}</p>
+            <div className="lp-grid-layout">
+              {(body as ModalBodyGrid).items.map((item, idx) => (
+                <div key={idx} className="lp-grid-item-card">
+                  <span className="lp-grid-item-icon">{item.icon}</span>
+                  <h4 className="lp-grid-item-title">{item.title}</h4>
+                  <p className="lp-grid-item-desc">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )
+
+      case 'list':
+        return (
+          <div className="lp-modal-content-list">
+            <p className="lp-modal-description">{(body as ModalBodyList).description}</p>
+            <ul className="lp-list-layout">
+              {(body as ModalBodyList).items.map((item, idx) => (
+                <li key={idx} className="lp-list-item">
+                  <span className="lp-list-item-icon">{item.icon}</span>
+                  <div className="lp-list-item-content">
+                    <strong className="lp-list-item-title">{item.title}</strong>
+                    <span className="lp-list-item-desc">{item.description}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+
+      case 'card':
+        return (
+          <div className="lp-modal-content-card">
+            <p className="lp-modal-description">{(body as ModalBodyCard).description}</p>
+            <div className="lp-card-sections">
+              {(body as ModalBodyCard).sections.map((section, idx) => (
+                <div key={idx} className="lp-card-section">
+                  <h4 className="lp-card-section-title">{section.title}</h4>
+                  <p className="lp-card-section-content">{section.content}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )
+
+      case 'doc':
+        return (
+          <div className="lp-modal-content-doc">
+            <p className="lp-modal-description">{(body as ModalBodyDoc).description}</p>
+            <p className="lp-doc-summary">{(body as ModalBodyDoc).summary}</p>
+            <div className="lp-doc-highlights">
+              <h4>Key Highlights</h4>
+              <ul>
+                {(body as ModalBodyDoc).highlights.map((highlight, idx) => (
+                  <li key={idx}>{highlight}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="lp-doc-links">
+              <h4>Documentation Links</h4>
+              <ul>
+                {(body as ModalBodyDoc).links.map((link, idx) => (
+                  <li key={idx}>
+                    <a href={link.url} target="_blank" rel="noreferrer">
+                      📄 {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )
+
+      case 'structure':
+        return (
+          <div className="lp-modal-content-structure">
+            <p className="lp-modal-description">{(body as ModalBodyList).description}</p>
+            <div className="lp-structure-grid">
+              {(body as ModalBodyList).items.map((item, idx) => (
+                <div key={idx} className="lp-structure-item">
+                  <span className="lp-structure-icon">{item.icon}</span>
+                  <span className="lp-structure-title">{item.title}</span>
+                  <span className="lp-structure-desc">{item.description}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )
+
+      default:
+        // Fallback for unknown layout types
+        return <p>{JSON.stringify(body)}</p>
+    }
+  }
+
   return (
     <>
       <div className="lp-app-shell">
@@ -255,7 +432,12 @@ function LandingPage() {
       {isOuterModalOpen && activeOuterSquareId && (
         <div className="lp-modal-backdrop" onClick={closeOuterModal}>
           <div
-            className="lp-modal"
+            className="lp-modal lp-modal-responsive"
+            style={{
+              width: `${modalSize.width}px`,
+              maxWidth: `${modalSize.width}px`,
+              maxHeight: `${modalSize.height}px`,
+            }}
             onClick={event => {
               event.stopPropagation()
             }}
@@ -270,7 +452,7 @@ function LandingPage() {
             </button>
             <h2 className="lp-modal-title">{t(`outerSquares.${activeOuterSquareId}.tooltipTitle`)}</h2>
             <div className="lp-modal-body">
-              <p>{t(`outerSquares.${activeOuterSquareId}.modalBody`)}</p>
+              {renderModalContent(activeOuterSquareId)}
             </div>
           </div>
         </div>

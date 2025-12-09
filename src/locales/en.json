@@ -7,64 +7,238 @@
   },
   "outerSquares": {
     "1": {
-      "label": "Square 1",
-      "tooltipTitle": "Tooltip title 1",
-      "modalBody": "Modal body 1: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "Tech Stack",
+      "tooltipTitle": "Technologies Used",
+      "layoutType": "list",
+      "modalBody": {
+        "description": "Complete technology stack powering the TULAMIA website.",
+        "items": [
+          { "icon": "🟠", "title": "TYPO3 v12.4", "description": "Enterprise CMS for content management" },
+          { "icon": "⚛️", "title": "React 18", "description": "Modern UI library with TypeScript" },
+          { "icon": "🐘", "title": "PHP 8.1", "description": "Backend language with modern features" },
+          { "icon": "🐬", "title": "MySQL 5.7", "description": "Relational database for data storage" },
+          { "icon": "🐳", "title": "Docker", "description": "Containerization for consistent environments" },
+          { "icon": "🪶", "title": "Apache", "description": "Web server with mod_rewrite" },
+          { "icon": "📦", "title": "Composer", "description": "PHP dependency management" },
+          { "icon": "🐗", "title": "Grunt", "description": "Task runner for frontend builds" },
+          { "icon": "⚡", "title": "Vite", "description": "Fast React development server" },
+          { "icon": "🎨", "title": "SCSS/Bootstrap 5", "description": "Styling and responsive design" }
+        ]
+      }
     },
     "2": {
-      "label": "Square 2",
-      "tooltipTitle": "Tooltip title 2",
-      "modalBody": "Modal body 2: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "Hosting",
+      "tooltipTitle": "Hosting & Deployment",
+      "layoutType": "card",
+      "modalBody": {
+        "description": "Production hosting on Strato with Plesk control panel.",
+        "sections": [
+          {
+            "title": "🌐 Strato Hosting",
+            "content": "German hosting provider with Plesk control panel for domain management, SSL certificates, and PHP configuration."
+          },
+          {
+            "title": "🔐 Security",
+            "content": "ZeroSSL certificates, HTTP Basic Auth for staging environments, and proper file permissions (Plesk domain user isolation)."
+          },
+          {
+            "title": "🚀 Deployment Script",
+            "content": "One-command deployment via deploy-tulamia-v12-to-strato: Git sync, rsync React bundles, database sync, asset build, cache flush, and verification."
+          },
+          {
+            "title": "📁 Multi-Environment",
+            "content": "Development (Docker at tulamia-v12.local), Staging (staging.tulamia.site), and Production (tulamia.site) with proper configuration isolation."
+          }
+        ]
+      }
     },
     "3": {
-      "label": "Square 3",
-      "tooltipTitle": "Tooltip title 3",
-      "modalBody": "Modal body 3: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "React",
+      "tooltipTitle": "React Applications",
+      "layoutType": "grid",
+      "modalBody": {
+        "description": "Interactive React applications integrated into TYPO3.",
+        "items": [
+          { "icon": "🧭", "title": "Landing Page", "description": "Interactive portfolio showcase with 4x4 grid navigation" },
+          { "icon": "✅", "title": "Todo App", "description": "Task management with sorting, filtering, and status tracking" },
+          { "icon": "📋", "title": "Tasks Board", "description": "Kanban-style board with drag-and-drop functionality" },
+          { "icon": "🎯", "title": "Life Goals", "description": "Goal tracking with progress visualization and charts" },
+          { "icon": "📊", "title": "Sales App", "description": "Sales dashboard with Chart.js data visualization" },
+          { "icon": "👔", "title": "Job App", "description": "Job listings with TYPO3 backend API integration" }
+        ]
+      }
     },
     "4": {
-      "label": "Square 4",
-      "tooltipTitle": "Tooltip title 4",
-      "modalBody": "Modal body 4: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "TYPO3",
+      "tooltipTitle": "TYPO3 Extensions",
+      "layoutType": "list",
+      "modalBody": {
+        "description": "Custom TYPO3 extensions developed for the TULAMIA project.",
+        "items": [
+          { "icon": "🏠", "title": "tulamia_site", "description": "Main site extension with templates, TypoScript, and SCSS" },
+          { "icon": "📦", "title": "typo3_react_importer", "description": "Scaffolds React apps from GitHub into TYPO3 extensions" },
+          { "icon": "🎓", "title": "typo3_certification_exam", "description": "TYPO3 certification practice exam module" },
+          { "icon": "🛠️", "title": "typo3_utilitycommand_cli", "description": "Custom CLI commands for TYPO3 maintenance" }
+        ]
+      }
     },
     "5": {
-      "label": "Square 5",
-      "tooltipTitle": "Tooltip title 5",
-      "modalBody": "Modal body 5: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "Local Setup",
+      "tooltipTitle": "Local Development",
+      "layoutType": "card",
+      "modalBody": {
+        "description": "Docker-based local development environment.",
+        "sections": [
+          {
+            "title": "🐳 Docker Compose",
+            "content": "Multi-service setup: PHP-FPM app container, Apache web server, MySQL database, and Mailhog for email testing."
+          },
+          {
+            "title": "🔒 SSL Certificates",
+            "content": "Local HTTPS via mkcert for trusted development certificates."
+          },
+          {
+            "title": "📂 File Permissions",
+            "content": "UID 1000 mapping ensures proper file ownership between host and containers."
+          },
+          {
+            "title": "🌐 Local Domains",
+            "content": "Access via tulamia-v12.local with Traefik reverse proxy."
+          }
+        ]
+      }
     },
     "8": {
-      "label": "Square 8",
-      "tooltipTitle": "Tooltip title 8",
-      "modalBody": "Modal body 8: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "API",
+      "tooltipTitle": "API Integrations",
+      "layoutType": "list",
+      "modalBody": {
+        "description": "RESTful APIs connecting React frontends with TYPO3 backend.",
+        "items": [
+          { "icon": "💼", "title": "Job App API", "description": "Fetch job listings from TYPO3 Extbase controller via eID endpoint" },
+          { "icon": "🌐", "title": "Locale API", "description": "Dynamic JSON locale loading from fileadmin via eID controller" },
+          { "icon": "📊", "title": "Sales API", "description": "Sales data endpoints for Chart.js visualization" },
+          { "icon": "🎯", "title": "Life Goals API", "description": "Goal progress tracking with CRUD operations" }
+        ]
+      }
     },
     "9": {
-      "label": "Square 9",
-      "tooltipTitle": "Tooltip title 9",
-      "modalBody": "Modal body 9: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "Styling",
+      "tooltipTitle": "Styling & Design",
+      "layoutType": "list",
+      "modalBody": {
+        "description": "Design system and styling approach.",
+        "items": [
+          { "icon": "🎨", "title": "Color Palette", "description": "Primary #1351af, Secondary #1351fa, Tertiary #af1703, Quaternary #118501, Quinary #ff8203" },
+          { "icon": "🔤", "title": "Typography", "description": "System fonts with fallbacks: system-ui, -apple-system, sans-serif" },
+          { "icon": "✨", "title": "React Inspiration", "description": "Styles inspired by ReactBits and shadcn/ui component libraries" },
+          { "icon": "📱", "title": "Responsive", "description": "Mobile-first design with Bootstrap 5 grid system" },
+          { "icon": "🌙", "title": "Dark Mode", "description": "CSS custom properties for light/dark theme switching" }
+        ]
+      }
     },
     "12": {
-      "label": "Square 12",
-      "tooltipTitle": "Tooltip title 12",
-      "modalBody": "Modal body 12: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "Introduction",
+      "tooltipTitle": "Introduction & Approach",
+      "layoutType": "doc",
+      "modalBody": {
+        "description": "Project overview and technical approach.",
+        "summary": "The TULAMIA website is a personal technology platform developed using TYPO3 CMS v12 with React applications. It demonstrates modern web development practices including containerization, multi-environment deployment, and comprehensive documentation.",
+        "highlights": [
+          "Full-stack development with PHP, React, and TypeScript",
+          "Docker-based development environment",
+          "4+ custom TYPO3 extensions",
+          "6 integrated React applications",
+          "50,000+ lines of code"
+        ],
+        "links": [
+          { "label": "00-README.md", "url": "https://gitlab.com/typo3v12-websites/tulamia-v12/-/blob/master/doc/final-paper/00-README.md" },
+          { "label": "01-introduction-and-technical-stack.md", "url": "https://gitlab.com/typo3v12-websites/tulamia-v12/-/blob/master/doc/final-paper/01-introduction-and-technical-stack.md" }
+        ]
+      }
     },
     "13": {
-      "label": "Square 13",
-      "tooltipTitle": "Tooltip title 13",
-      "modalBody": "Modal body 13: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "TYPO3 Structure",
+      "tooltipTitle": "Project Structure",
+      "layoutType": "structure",
+      "modalBody": {
+        "description": "TYPO3 project file and folder structure.",
+        "items": [
+          { "icon": "📁", "title": "packages/", "description": "Custom extensions & React apps" },
+          { "icon": "📁", "title": "config/", "description": "TYPO3 config (system, sites)" },
+          { "icon": "📁", "title": "web/", "description": "Document root, fileadmin" },
+          { "icon": "📁", "title": "var/", "description": "Cache, logs, sessions" },
+          { "icon": "📁", "title": "vendor/", "description": "Composer dependencies" },
+          { "icon": "📁", "title": "node_modules/", "description": "NPM dependencies" },
+          { "icon": "📁", "title": "doc/", "description": "Documentation files" },
+          { "icon": "📁", "title": ".ddev/", "description": "DDEV config (alternative)" },
+          { "icon": "📄", "title": "composer.json", "description": "PHP dependencies" },
+          { "icon": "📄", "title": "package.json", "description": "NPM scripts & deps" },
+          { "icon": "📄", "title": "docker-compose.yml", "description": "Container orchestration" },
+          { "icon": "📄", "title": "Gruntfile.js", "description": "Frontend build tasks" },
+          { "icon": "📄", "title": ".env", "description": "Environment variables" },
+          { "icon": "📄", "title": ".gitignore", "description": "Git ignore rules" },
+          { "icon": "📄", "title": "phpstan.neon", "description": "Static analysis config" },
+          { "icon": "📄", "title": "README.md", "description": "Project documentation" }
+        ]
+      }
     },
     "14": {
-      "label": "Square 14",
-      "tooltipTitle": "Tooltip title 14",
-      "modalBody": "Modal body 14: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "Dev Environment",
+      "tooltipTitle": "Development Environment",
+      "layoutType": "list",
+      "modalBody": {
+        "description": "Tools and environment for development.",
+        "items": [
+          { "icon": "🐧", "title": "Ubuntu 24.04 LTS", "description": "Linux development workstation" },
+          { "icon": "💻", "title": "Windsurf IDE", "description": "AI-powered code editor (Cascade assistant)" },
+          { "icon": "🌐", "title": "Chrome DevTools", "description": "Browser debugging and React DevTools" },
+          { "icon": "⌨️", "title": "Bash/Zsh", "description": "Custom aliases and deploy scripts in .bashrc" },
+          { "icon": "🔀", "title": "Git + GitLab", "description": "Version control with private package hosting" },
+          { "icon": "🤖", "title": "AI Assistants", "description": "GPT 4.1, Claude Sonnet 4.5 for code assistance" }
+        ]
+      }
     },
     "15": {
-      "label": "Square 15",
-      "tooltipTitle": "Tooltip title 15",
-      "modalBody": "Modal body 15: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "Implementation",
+      "tooltipTitle": "Implementation Details",
+      "layoutType": "doc",
+      "modalBody": {
+        "description": "Technical implementation process.",
+        "summary": "The implementation covers local development setup with Docker, website building with TYPO3 and Grunt, React application integration, and deployment to Strato hosting.",
+        "highlights": [
+          "Docker Compose with 4 services (app, apache, mysql, mail)",
+          "Grunt build pipeline for SCSS and JavaScript",
+          "React apps built with Vite and integrated via typo3_react_importer",
+          "RESTful APIs with TYPO3 Extbase controllers",
+          "One-command deployment script with verification"
+        ],
+        "links": [
+          { "label": "02-local-development-setup.md", "url": "https://gitlab.com/typo3v12-websites/tulamia-v12/-/blob/master/doc/final-paper/02-local-development-setup.md" },
+          { "label": "03-website-building-process.md", "url": "https://gitlab.com/typo3v12-websites/tulamia-v12/-/blob/master/doc/final-paper/03-website-building-process.md" },
+          { "label": "04-react-applications.md", "url": "https://gitlab.com/typo3v12-websites/tulamia-v12/-/blob/master/doc/final-paper/04-react-applications.md" },
+          { "label": "05-deployment-process.md", "url": "https://gitlab.com/typo3v12-websites/tulamia-v12/-/blob/master/doc/final-paper/05-deployment-process.md" }
+        ]
+      }
     },
     "16": {
-      "label": "Square 16",
-      "tooltipTitle": "Tooltip title 16",
-      "modalBody": "Modal body 16: Donec et urna vel risus feugiat pharetra. Proin id lacus vitae velit accumsan venenatis. Aenean non mi vel nisi lacinia maximus. Duis efficitur, sapien quis bibendum auctor, lectus risus feugiat sapien, ac pulvinar orci est a arcu. Integer id augue vitae urna tristique tempus."
+      "label": "Results",
+      "tooltipTitle": "Results & Future",
+      "layoutType": "doc",
+      "modalBody": {
+        "description": "Project outcomes and future plans.",
+        "summary": "The project achieved a fully functional TYPO3 website with integrated React applications, comprehensive documentation, and automated deployment. Future plans include TYPO3 v13/v14 migration, Elasticsearch integration, and CI/CD pipeline implementation.",
+        "highlights": [
+          "Production-ready website at tulamia.site",
+          "Multi-environment deployment (Dev/Staging/Prod)",
+          "Bilingual documentation (English/German)",
+          "~25-40% AI assistance in development",
+          "Continuous learning platform with no fixed end date"
+        ],
+        "links": [
+          { "label": "06-conclusion-and-future.md", "url": "https://gitlab.com/typo3v12-websites/tulamia-v12/-/blob/master/doc/final-paper/06-conclusion-and-future.md" }
+        ]
+      }
     }
   },
   "centerCircle": {
